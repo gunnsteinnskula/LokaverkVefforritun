@@ -1,0 +1,15 @@
+extends layout
+
+block content
+		body
+			main.top-content
+				header
+					h1 Eyðublað
+		.wrapper
+				if entries
+					ul
+						each u in entries
+					li 
+						h1 #{u.username}
+						h2 #{text}
+						p #{u.date}

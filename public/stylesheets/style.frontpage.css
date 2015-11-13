@@ -1,0 +1,437 @@
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+html{
+	font-size: 20px;
+	font-family: 'Raleway';
+	line-height: 30px;
+}
+
+.all-section{
+	margin-left: 20%;
+	margin-right:10%;
+}
+* { box-sizing: border-box; }
+
+body{
+	background-color: rgba(0, 0, 0, 0.1);
+	position:center;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header{
+	font-family: 'Bree serif';
+	background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8cwyYsm7qfIdXxmGug9y5a5g259q0UmZpH_JOl02cCqqlZ9BhttQz9YPH);
+	background-position: center;
+	height: 600px;
+	background-size: cover;
+	color: #f1f1f1;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 4rem;
+	line-height: 80px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+	margin-top: 0;
+	padding-top: 10%;
+	padding-left:15%;
+
+}
+.subheader{
+	font-size: 2.4rem;
+	line-height: 72px;
+	padding-left: 15%;
+	padding-right: 15%;
+	font-weight: 100;
+}
+.link{
+	text-decoration: blink;
+	border-bottom: solid;
+	border-color: #1f1f1f;
+	border-width: 5px;
+	color: #f1f1f1;
+   
+}
+.linkar{
+	padding-top:5%;
+	padding-left: 1%;
+	text-transform: uppercase;
+	line-height: 64px;
+	font-size: 16px;
+	position:fixed;
+	top:0;
+	height: 100%;
+	width:110px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: rgb(0,200,0);
+}
+.heim{
+	text-decoration: blink;
+	border-bottom: solid;
+	border-color: #f1f1f1;
+	border-width: 2px;
+	color: #f1f1f1;
+}
+.valmynd{
+	text-decoration: blink;
+	color: #f1f1f1;
+}
+.valmynd:hover{
+	border-bottom: solid;
+	border-color: #f1f1f1;
+	border-width: 2px;
+}
+.valmynd2{
+	text-decoration: blink;
+	color: #f1f1f1;
+}
+.valmynd2:hover{
+	border-bottom: solid;
+	border-color: #f1f1f1;
+	border-width: 2px;
+}
+
+
+.link:hover{
+	color: #1f1f1f;
+	border-color: #f1f1f1;
+}
+h3{
+	margin-bottom:0;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-family: 'Bree serif'
+}
+
+.highestsection{
+	display: flex;
+}
+
+.bjarnamynd{
+	margin-top: 2%;	
+	flex: 1;
+	width: 50%;
+}
+
+.highestsection-right{
+	flex:1;
+	width: 500px;
+	margin-left: 5%;
+}
+.middle-section{
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'Bree serif';
+	font-size: 2.4rem;
+	line-height: 48px;
+}
+
+.heading-three{
+	margin-bottom: 0;
+}
+.middle-section-right{
+	margin-left:5%;
+	flex: 1;
+	width: 35%;
+	margin-right: 5%;
+}
+
+.middle-section-left{
+	flex: 1;
+	width: 35%;
+}
+.names{
+	font-size: 1.2rem;
+	line-height:24px;
+}
+.bottom-section{
+	margin-top: 3%;
+	display:flex;
+	flex-wrap: wrap;
+	color:#f1f1f1;
+}
+h4{	
+	font-family:'bree serif';
+	font-size: 40px;
+	text-transform: uppercase;
+	margin-top:5%;
+	margin-left:5%;
+
+}
+.description{
+	margin-left:5%;
+}
+.fuglar{
+
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(mafar.jpg);
+	background-position: center;
+    background-size: cover;
+	width: 48%;
+	height: 300px;
+	flex: 1;
+	margin-bottom: 2%;
+	position: relative;
+}
+
+.velja{
+	text-decoration: blink;
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform:translateX(-50%);
+	padding: 5px 20px;
+	font-size:20px;
+	border-radius: 3px 3px;
+	background-color: #fff;
+	color: #000;
+	margin-top: 7%;
+}
+.velja:hover{
+	background-color:  #000;
+    color:  #fff;
+}
+
+.velja:active{
+	background-color: transparent;
+    color: #000;
+    }
+
+.sandur{
+	position:relative;
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(sandur.jpg);
+	background-position: center;
+    background-size: cover;
+	width: 48%;
+	height: 300px;
+	margin-left: 1%;
+	flex: 1;
+}
+.takkar{
+	opacity: 0.4;
+	padding-right: 2%;
+}
+
+.takkar:hover{
+	opacity: 1;
+}
+
+
+
+.contact{
+	margin-bottom: 2%;
+}
+.name{
+	margin-bottom: 100px;
+	width:20%;
+}
+.textbox{
+	width:20%;
+	margin-bottom:50%;
+}
+.textabox{
+	font-size: 1rem;
+	float:right;
+	width:80%;
+	height:200px;
+	margin-right: 5%;
+}
+.emails{
+	margin-top: 30px;
+}
+.box{
+	margin-top: 30px;
+	margin-bottom:200px;
+}
+.senda{
+	padding: 1%;
+	font-size:20px;
+	border-radius: 3px 3px;
+	background-color: #fff;
+	color: #000;
+	float:right;
+	margin-top: 1%;
+	margin-right: 72%;
+	
+}
+.senda:hover{
+	background-color:  #000;
+    color:  #fff;
+}
+.senda:active{
+	background-color: transparent;
+    color: #000;
+}
+.nafn{
+	font-size: 1rem;
+	float:right;
+	width:80%;
+	height:40px;
+	margin-right: 5%;
+}
+.email{
+	width: 20%;
+}
+.netfang{
+	font-size: 1rem;
+	float:right;
+	width:80%;
+	height:40px;
+	margin-right: 5%;
+}
+.site-footer{
+	margin-top:100px;
+	display: block;
+    color: white;
+    height: 80px;
+}
+.socials{
+	display: flex;
+    justify-content: center;
+    padding-top:10px;
+}
+
+@media (max-width: 768px){
+		h1{
+		font-size: 55px;
+	}
+		.linkar{
+		position: relative;
+		width: 100%;
+		padding-bottom: 10%;
+		height: 300px;
+	}
+	.all-section{
+		margin-left:2%;
+		margin-right:0;
+	}
+	.middle-section{
+		display:block;
+	}
+	.middle-section-left{
+		width: 100%;
+	}
+	.middle-section-right{
+		width: 100%;
+	}
+	.bottom-section{
+		display:block;
+	}
+	.fuglar{
+		padding-top: 2%;
+		height: 500px;
+		margin-right:2%;
+		width: 98%;
+	}
+
+	.sandur{
+		padding-top: 2%;
+		margin-right:2%;
+		height:500px;
+		width: 98%;
+	}
+	.bjarnamynd{
+		margin-top: 5%;
+		height: 220px;
+		width:50%;
+	}
+	h3{
+		padding-left: 2%;
+	}
+	.form{
+		margin-left: 2%;
+	}
+	.nafn{
+		width: 95%;
+	}
+	.netfang{
+		width:95%;
+	}
+	.textabox{
+		width: 95%;
+	}
+	.heim{
+		margin-left:47%;
+	}
+	.valmynd{
+		margin-left:45%;
+	}
+	.valmynd2{
+		margin-left:46%;
+	}
+
+	.senda{
+		float:left;
+		padding: 2% 5%;
+
+	}
+	h1{
+		padding-left: 5%;
+	}
+	.subheader{
+		padding-left: 5%;
+	}
+ }
+ @media (max-width: 320px){
+ 	.description{
+ 		visibility: hidden;
+ 	}
+ 	header{
+ 		height: 800px;
+ 	}
+ 	.bjarnamynd{
+ 		width: 40%;
+ 		height: 30%;
+ 		flex:none;
+ 		float: left;
+ 	}
+ 	.highest-section-right{
+ 		flex:none;
+ 		float:right;
+ 	}
+ 	.sandur{
+ 		width: 98%;
+ 		height: 100%;
+ 		margin-right:2%;
+ 	}
+ 	.fuglar{
+ 		width: 98%;
+ 		height: 100%;
+ 		margin-right:2%;
+ 	}
+ 	.names{
+ 		margin-right:40%;
+ 	}
+
+ 	.umsogn{
+ 		margin-right:10%;
+ 	}
+
+ 	.highestsection{
+ 		display: block;
+ 	}
+ 	.highestsection-right{
+ 		padding-right: 70%;
+ 	}
+ 	.bottom-section{
+ 		display:block;
+ 	}
+ 	.bjarnamynd{
+ 		margin-top:0;
+ 	}
+ 	h4{
+ 		font-size: 1.4rem;
+ 	}
+
+
+
+ }
+

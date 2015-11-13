@@ -1,0 +1,40 @@
+extends layout
+
+block content
+	body
+		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
+			header
+				h1 Eyðublað
+	.wrapper
+		form.form-horizontal(method="post")
+			.form-group
+				label.col-sm-2.control-label(for='name') Nafn:	
+				.col-sm-10
+					input#sitename(type="text" name="name" class="name")
+			.form-group
+				label.col-sm-2.control-label(for='username') Notendanafn:
+				.col-md-10
+					input#username(type="text" name="username" class="username")
+			.form-group
+				label.col-sm-2.control-label(for='pf') Prófíl mynd:
+				.col-md-10
+					input#name(type="text" name="pf" class="pf")
+			.form-group
+				label.col-sm-2.control-label(for='adresse') Heimilisfang:
+				.col-md-10
+					input#background(type="text" name="adresse" class="adresse")
+			.form-group
+				label.col-sm-2.control-label(for='email') Netfang:
+				.col-md-10
+					input#subheader(type="text" name="email" clas="email")
+			.form-group
+				label.col-sm-2.control-label(for='pn') Símanúmer:
+				.col-md-10
+					input#pf(type="text" name="pn" class="pn")
+			.form-group
+				label.col-sm-2.control-label(for='pw') Lykilorð:
+				.col-md-10
+					input#pf(type="text" name="pw" class="pw")
+				.form-group
+					.col-sm-offset-8
+						input(type="submit" class="takki" )

@@ -1,0 +1,239 @@
+
+/* BODY */
+
+
+body {
+	background-size: cover;
+	background-color: #F2F2F2;
+	font-family: 'Raleway';
+	font-size: 20px;
+	line-height: 30px;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+
+/* HEADER */
+.top-content{
+	font-family: 'Bree Serif';
+	background: url('img/mafar.jpg');
+      	background-size: cover;
+	background-position:center;
+      	background-repeat: no-repeat;
+
+}
+
+header {
+	margin-left: 18%;
+      	padding: 5% 0% 10%;
+      	text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  
+}
+
+ h1 {
+       	font-variant: small-caps;
+	line-height: 80px;
+	font-variant: small-caps; text-transform: uppercase;
+	font-size: 63px;
+	color: #000;
+	margin-top: -2%;
+}
+
+
+.sub{
+	font-size: 48px;
+	line-height: 72px;
+	font-weight: bold;
+	color: #000;
+}
+
+.verkefni{ margin-bottom: 3%; }
+
+.link {
+  text-decoration: none;
+  color: #f1f1f1;
+  border-bottom: 5px solid #1f1f1f;
+}
+
+
+.link:visited {
+	color: black;
+	border-color: white;
+}
+
+.link:hover {
+  color: #1f1f1f;
+  border-bottom: 5px solid #f1f1f1;
+}
+
+.wrapper{
+	margin-left: 23%;
+	margin-right: 5%;
+}
+
+/* SECTION */
+
+.strandarpic{
+	flex: 1;
+	max-width: 98%;
+}
+
+.comment {
+	font: italic 48px/60px 'Bree Serif'; 
+	margin-top:20px;
+}
+
+.review {
+	font-family: 'Bree Serif';
+	font-size: 24px;
+}
+
+.halfs { 
+}
+
+
+.half1{
+	background: url('img/mafar2.jpg');
+	background-size: 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position:center;
+	float: right;
+	width: 46%;
+	margin: 1%;
+	padding-bottom: 44%;
+	margin-bottom: 7.5%
+}
+
+.half2{
+	width: 46%;
+	margin: 1%;
+	background-size: 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position:center;
+	float: left;
+	margin-bottom: 7.5%
+}
+
+/* NAVIGATOR */
+nav {
+	width: 150px;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0px;
+	bottom: 0%;
+	position: fixed;
+}
+
+ul{ list-style-type: none; }
+
+nav a {
+	color: #ffffff;
+	text-transform:uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+	margin: 0 0 0 -15%;
+}
+
+nav a:hover { border-bottom: 3px solid #f1f1f1; }
+
+.home{
+	border-bottom: 3px solid #f1f1f1;
+}
+
+.heimlink{ margin: 43% 0% 0%;}
+
+.verkefnilink{ margin: 34% 0%;}
+
+/* FOOTER */
+.site-footer { padding: 20px; }
+
+.socials {
+	display: flex;
+	justify-content: center;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	margin: 0 0  0 45%;
+	font-size: 0;
+}
+
+
+.socials a:not(:first-of-type) { padding-left: 33px; }
+
+.socials a  img { opacity: 0.4; }
+
+.socials a img:hover { opacity: 1; }
+
+/* SCALING */
+@media only screen and (max-width: 1199px){
+	html{ margin: 0 0 0 0; }
+
+	header{
+		margin-left: 8%;
+		padding: 9% 0% 36% 0%;
+	}
+
+	 h1 {
+		font-variant: small-caps;
+		line-height: 55px;
+		font-variant: small-caps; text-transform: uppercase;
+		font-size: 55px;
+		margin: 0 5% 0 0;
+	}
+
+	.wrapper{ margin: 0 2% 0; }
+
+	.half2
+	{
+		background-size: cover;
+		width: 100%;
+		margin: 1% 0%;
+	}
+
+	.half1
+	{
+		background-size: cover;
+		width: 100%;
+		margin: 1% 0%;
+		padding-bottom: 97%;
+	}
+
+
+	
+	nav{
+		width:100%;
+		float: left;
+		height: 270px;
+		position: static;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 767px){
+	header{
+		word-break: break-all;
+	}
+
+	.socials{ 
+		margin: 0% 9%;
+	}
+
+
+	nav{
+		width: 100%;
+		float: left;
+		position: static;
+		text-align: center;
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+
+	.wrapper{
+		margin: 0 2%;
+	}
+
+	.half1{
+	}
+	h4{ font-size: 30px; }
+}

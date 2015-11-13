@@ -1,0 +1,27 @@
+extends layout
+
+block content
+		body
+			main.top-content(style='background-image: url(#{background})')
+				header
+					h1 Ég er #{name}
+					h2.subheader #{subheader}
+		.wrapper
+			.bottom-content
+				.bear-section
+					h3 #{name} 
+					.flexbox
+						.flex
+							img.profilepic(src=pf, alt='Mynd af mér, samt ekki')
+						.flex
+							p #{description}
+				section.review-section
+					.flexbox
+						.flex
+						.flex
+				.halfs
+						.half1
+							.mavadiv
+						.half2
+
+
