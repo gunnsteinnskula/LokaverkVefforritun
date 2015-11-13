@@ -39,3 +39,11 @@ Thumbs.db
 # IGNORE NODE MODULES #
 #######################
 node_modules
+
+
+# VIM generated files #
+######################
+..gitignore.un~
+.gitignore~
+node_modules.textClipping
+.gitignore.swp
