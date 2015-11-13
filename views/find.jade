@@ -1,15 +1,20 @@
 extends layout
 
 block content
-		body
-			main.top-content
-				header
-					h1 Eyðublað
+	body
+		main.top-content
+			header
+				h1 Eyðublað
 		.wrapper
+			select(class="menu" name="val") #{val} 
 				if entries
-					ul
-						each u in entries
-					li 
-						h1 #{u.username}
-						h2 #{text}
-						p #{u.date}
+					each u in entries
+						form(method="post")
+						button(onclick='reply_click(this.id)', id=u.sitename) #{u.sitename}
+
+
+	script(type='text/javascript').
+		function reply_click(clicked_id)
+		{
+			p(name='valinn')=alert(clicked_id);
+		}
