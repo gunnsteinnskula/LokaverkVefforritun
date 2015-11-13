@@ -7,7 +7,6 @@ var sites = require('../lib/sites');
 /* GET home page. */
 router.get('/', function(req, res) {
   sites.gef('suh3', function (err, entryList) {
-  	console.log(entryList);
     res.render('find', {
       entries: entryList
     });
@@ -15,7 +14,13 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-	console.log(req + ' gunnsteinn segir hæ');
+	sites.findSite(req.body.val, function(err, siteInfo){
+		console.log(siteInfo);
+		res.render('sida',siteInfo);
+
+	});	
+
+
 });
 
 
