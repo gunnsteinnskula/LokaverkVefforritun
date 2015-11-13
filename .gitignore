@@ -47,3 +47,6 @@ node_modules
 .gitignore~
 node_modules.textClipping
 .gitignore.swp
+*.swp
+*.swo
+*~
