@@ -6,15 +6,9 @@ block content
 			header
 				h1 Eyðublað
 		.wrapper
-			select(class="menu" name="val") #{val} 
-				if entries
-					each u in entries
-						form(method="post")
-						button(onclick='reply_click(this.id)', id=u.sitename) #{u.sitename}
-
-
-	script(type='text/javascript').
-		function reply_click(clicked_id)
-		{
-			p(name='valinn')=alert(clicked_id);
-		}
+			if entries
+				form(method="post")
+					select(class="menu" name="val")
+						each u in entries
+							option(value=u.sitename ) #{u.sitename}
+						input(type="submit" class="takki" )
