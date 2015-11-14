@@ -1,10 +1,5 @@
 extends layout
 block content
-		meta(name='viewport', content='width=device-width, initial-cale=1')
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-		link(href='https://fonts.googleapis.com/css?family=Raleway|Bree+Serif', rel='stylesheet', type='text/css')
-		link(rel='stylesheet', href='dist/stylesheets/styles.css')
 		body
 			main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 				header
@@ -13,7 +8,16 @@ block content
 						p Velkomin á síðuna Sunnstein
 						p Hér getur þú búið þér til þína eigin vefsíðu.
 		.wrapper
-				
-		
-		
-		
+			fieldset
+				form.form-horizontal
+				.form-group
+					label.col-sm-2.control-label(for='username') Notendanafn:	
+					.col-sm-10
+						input#sitename(type="text" name="username" class="username")
+				.form-group
+					label.col-sm-2.control-label(for='password') Lykilorð:
+					.col-md-10
+						input#username(type="text" name="password" class="password")
+				.form-group
+					.col-sm-offset-8
+						input(type="submit" class="takki" )
