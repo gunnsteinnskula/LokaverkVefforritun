@@ -13,16 +13,17 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 	var renderData={
 	sitename:'',
+	username:'',
 	name:'',
+	background:'',
 	subheader:'',
-	description:'',
 	pf:'',
-	background:''};
+	description:''};
 	putIn(renderData,req.body);
 	if(renderData.background === ''){
 		renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
 	}
-	site.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.purl, renderData.description, renderData.sitename, function (err, status) {
+	site.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.pf, renderData.description, renderData.sitename, function (err, status) {
     if (err) {
       console.error(err);
     }
@@ -52,16 +53,16 @@ function putIn(renderData, data){
 
 function villumelding(data){
 	var errors=[];
-	if(!validate.length(data.sitename,3))
-		errors.push('Nafn síðu þarf að innihalda að minnsta kosti 3 stafi.');
 	if(!validate.length(data.name,3))
-		errors.push('Þetta er ekki löggilt nafn.');
-	if(!validate.length(data.subheader,3))
-		errors.push('Þetta er ekki löggild undirfyrirsögn.');
-	if(!validate.length(data.description,3))
-		errors.push('is not valid');
-	if(!validate.isPic(data.pf))
-		errors.push('Þetta er ekki löggild mynd.');
+		errors.push('You must enter your name');
+	if(!validate.isEmail(data.email))
+		errors.push('The email is not valid');
+	if(!validate.address(data.adresse))
+		errors.push('The adress is not valid');
+	if(!validate.required(data.val))
+		errors.push('You must select how you live');
+	if(!validate.phonenumber(data.pn))
+		errors.push('The phone number is not valid');
 	return errors;
 }
 

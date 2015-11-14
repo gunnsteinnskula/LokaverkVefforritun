@@ -15,8 +15,16 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 	sites.findSite(req.body.val, function(err, siteInfo){
-		console.log(siteInfo);
-		res.render('sida',siteInfo);
+	var renderData={
+		sitename:siteInfo[0].sitename,
+		username:siteInfo[0].username,
+		name:siteInfo[0].name,
+		background:siteInfo[0].bpurl,
+		subheader:siteInfo[0].subheader,
+		pf:siteInfo[0].purl,
+		description:siteInfo[0].text};
+		console.log(siteInfo[0]);
+		res.render('sida',renderData)
 
 	});	
 
