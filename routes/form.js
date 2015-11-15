@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
 	subheader:'',
 	pf:'',
 	description:''};
-	putIn(renderData,req.body);
+	putIn(renderData,req.body, req.session);
 	if(renderData.background === ''){
 		renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
 	}
@@ -36,13 +36,13 @@ router.post('/', function(req, res) {
 
     res.render('create', { title: 'Create site', post: true, success: success })
   });
-	res.render('sida', renderData );
+	res.render('sida', {renderData:renderData} );
 });
 
 
-function putIn(renderData, data){
+function putIn(renderData, data, s){
 	renderData.sitename=data.sitename,
-	renderData.username=data.username,
+	renderData.username=s.user.username,
 	renderData.name=data.name,
 	renderData.background=data.background,
 	renderData.subheader=data.subheader,

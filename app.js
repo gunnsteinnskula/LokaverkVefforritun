@@ -11,7 +11,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 // exposes the req.body object for easy access to request parameters in routes.
 var bodyParser = require('body-parser');
-
+var session = require('express-session');
 
 // Make reference to the route-handler scripts we use.
 var routes = require('./routes/index');
@@ -21,6 +21,14 @@ var sida = require('./routes/sida');
 var register = require('./routes/register');
 // initialize express
 var app = express();
+
+app.use(session({
+  secret: 'session secret!',
+  resave: false,
+  saveUninitialized: true,
+  cookie: cookie,
+  name: 'session'
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +57,12 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+var cookie = { domain: '',
+               httpOnly: false,
+               secure: false };
+
+
 
 // error handlers
 

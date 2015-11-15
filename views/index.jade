@@ -8,16 +8,19 @@ block content
 						p Velkomin á síðuna Sunnstein
 						p Hér getur þú búið þér til þína eigin vefsíðu.
 		.wrapper
-			fieldset
-				form.form-horizontal(method="post")
-				.form-group
-					label.col-sm-2.control-label(for='username') Notendanafn:	
-					.col-sm-10
-						input#sitename(type="text" name="username" class="username")
-				.form-group
-					label.col-sm-2.control-label(for='password') Lykilorð:
-					.col-md-10
-						input#username(type="text" name="password" class="password")
-				.form-group
-					.col-sm-offset-8
-						input(type="submit" class="takki" )
+			if username
+				p þú ert loggaður inn sem #{username}
+			else 
+				fieldset
+					form.form-horizontal(method="post")
+						.form-group
+							label.col-sm-2.control-label(for='username') Notendanafn:	
+							.col-sm-10
+								input#sitename(type="text" name="username" class="username")
+						.form-group
+							label.col-sm-2.control-label(for='password') Lykilorð:
+							.col-md-10
+								input#username(type="text" name="password" class="password")
+						.form-group
+							.col-sm-offset-8
+								input(type="submit" class="takki" )

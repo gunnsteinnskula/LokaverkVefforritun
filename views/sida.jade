@@ -2,19 +2,33 @@ extends layout
 
 block content
 		body
-			main.top-content(style='background-image: url(#{background})')
+			main.top-content(style='background-image: url(#{renderData.background})')
 				header
-					h1 Ég er #{name}
-					h2.subheader #{subheader}
+					h1  #{renderData.name} 
+					h2.subheader #{renderData.subheader}
 		.wrapper
 			.bottom-content
 				.bear-section
-					h3 #{name} 
+					h3 #{renderData.name} 
 					.flexbox
 						.flex
-							img.profilepic(src=pf, alt='Mynd af mér, samt ekki') 
+							img.profilepic(src=renderData.pf, alt='Mynd af mér, samt ekki') 
 						.flex
-							p #{description}
+							p #{renderData.description}
+				section.middle-section
+					form(method="post")
+						fieldset.form-group
+							input(type='hidden' name='sitename' value= renderData.sitename)
+							label(for="text") Skilaboð
+							textarea#textarea.form-control(rows='5', placeholder='Skrifaðu hér til að skrifa á vegginn' name="text")
+							input(type="submit" value="Skilja eftir skilaboð").form-control
+
+					if entries
+						each u in entries
+							.list-group-item 
+								h4 #{u.text}
+								h5 #{u.username} skrifaði þann #{u.date} 
+
 				section.review-section
 					.flexbox
 						.flex
