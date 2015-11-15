@@ -17,8 +17,9 @@ router.get('/', function(req, res) {
 /* POST /form */
 router.post('/', function(req, res) {
 	if(req.body.siteval){
+		console.log('ferher');
 	  	sites.gef(req.body.siteval, function (err, siteList) {
-	    res.render('find', {
+	    res.render('profile', {
 	      sites: siteList
 	    });
 	  });

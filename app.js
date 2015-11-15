@@ -14,6 +14,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 // Make reference to the route-handler scripts we use.
+var profile = require('./routes/profile');
 var routes = require('./routes/index');
 var find = require('./routes/find');
 var form = require('./routes/form');
@@ -49,6 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // tell express which script should handle which route
 app.use('/', routes);
 app.use('/form', form);
+app.use('/profile', profile);
 app.use('/friends', friends);
 app.use('/sida', sida);
 app.use('/register', register);
