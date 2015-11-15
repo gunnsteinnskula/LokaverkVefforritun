@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	body
+		main.top-content
+			header
+				h1 Eyðublað
+		.wrapper
+			if friends
+				form(method="post")
+					select(class="menu" name="val")
+						each u in friends
+							option(value=u.username ) #{u.username}
+						input(type="submit" class="takki" )

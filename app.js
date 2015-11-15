@@ -17,6 +17,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var find = require('./routes/find');
 var form = require('./routes/form');
+var friends = require('./routes/friends');
 var sida = require('./routes/sida');
 var register = require('./routes/register');
 // initialize express
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // tell express which script should handle which route
 app.use('/', routes);
 app.use('/form', form);
+app.use('/friends', friends);
 app.use('/sida', sida);
 app.use('/register', register);
 app.use('/find', find);
