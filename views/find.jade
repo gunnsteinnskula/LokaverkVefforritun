@@ -6,9 +6,9 @@ block content
 			header
 				h1 Eyðublað
 		.wrapper
-			if entries
+			if sites
 				form(method="post")
 					select(class="menu" name="val")
-						each u in entries
+						each u in sites
 							option(value=u.sitename ) #{u.sitename}
 						input(type="submit" class="takki" )

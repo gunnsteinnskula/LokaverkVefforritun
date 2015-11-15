@@ -7,9 +7,9 @@ var entries = require('../lib/wall');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  	sites.gef(req.session.user.username, function (err, entryList) {
+  	sites.gef(req.session.user.username, function (err, siteList) {
     res.render('find', {
-      entries: entryList
+      sites: siteList
     });
   });
 });
@@ -27,7 +27,6 @@ router.post('/', function(req, res,next) {
 					pf:siteInfo[0].purl,
 					description:siteInfo[0].text
 				};
-				console.log('listi af skrifum:' + entryList);
 				var data={
 				renderData:renderData,
 				entries: entryList};
@@ -44,10 +43,10 @@ router.post('/', function(req, res,next) {
 
 function tagOnTheWallHandler(req, res, next){
 	console.log(req.body.text + req.body.sitename);
-  var text = req.body.text;
-  var sitename=req.body.sitename;
-  var user = req.session.user;
-  entries.createEntry(user.username, sitename, text, function (err, status) {
+  	var text = req.body.text;
+  	var sitename=req.body.sitename;
+  	var user = req.session.user;
+  	entries.createEntry(user.username, sitename, text, function (err, status) {
     if (err) {
       console.error(err);
     }
@@ -78,8 +77,8 @@ function index(req, res, next) {
 			var data={
 				renderData:renderData,
 				entries: entryList};
-			res.render('sida', data)
-				});
+			res.redirect('sida', data)
+			});
 
       });
     }

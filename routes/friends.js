@@ -3,6 +3,8 @@
 var express = require('express');
 var router = express.Router();
 var users=require('../lib/users');
+var sites = require('../lib/sites');
+var entries = require('../lib/wall');
 /* GET /form */
 router.get('/', function(req, res) {
 	users.listUsers(function (err, userList) {
@@ -14,19 +16,43 @@ router.get('/', function(req, res) {
 
 /* POST /form */
 router.post('/', function(req, res) {
-	var renderData={
-	sitename:'',
-	username:'',
-	name:'',
-	background:'',
-	subheader:'',
-	pf:'',
-	description:''};
-	putIn(renderData,req.body, req.session);
-	if(renderData.background === ''){
-		renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
+	if(req.body.siteval){
+	  	sites.gef(req.body.siteval, function (err, siteList) {
+	    res.render('find', {
+	      sites: siteList
+	    });
+	  });
+  	}
+  	if(req.body.val){
+		  entries.listWriting(req.body.val, function (err, entryList) {
+  			sites.findSite(req.body.val, function(err, siteInfo){
+				var renderData={
+					sitename:siteInfo[0].sitename,
+					username:siteInfo[0].username,
+					name:siteInfo[0].name,
+					background:siteInfo[0].bpurl,
+					subheader:siteInfo[0].subheader,
+					pf:siteInfo[0].purl,
+					description:siteInfo[0].text
+				};
+				var data={
+				renderData:renderData,
+				entries: entryList};
+				res.render('sida', data)
+			});
+  		});
 	}
-	site.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.pf, renderData.description, renderData.sitename, function (err, status) {
+	if(req.body.text){
+	 	tagOnTheWallHandler(req,res)	
+	}
+});
+
+function tagOnTheWallHandler(req, res){
+	console.log(req.body.text + req.body.sitename);
+  	var text = req.body.text;
+  	var sitename=req.body.sitename;
+  	var user = req.session.user;
+  	entries.createEntry(user.username, sitename, text, function (err, status) {
     if (err) {
       console.error(err);
     }
@@ -36,37 +62,30 @@ router.post('/', function(req, res) {
     if (err || !status) {
       success = false;
     }
-
-    res.render('create', { title: 'Create site', post: true, success: success })
+    index(req, res);
   });
-	res.render('sida', {renderData:renderData} );
-});
-
-
-function putIn(renderData, data, s){
-	renderData.sitename=data.sitename,
-	renderData.username=s.user.username,
-	renderData.name=data.name,
-	renderData.background=data.background,
-	renderData.subheader=data.subheader,
-	renderData.pf=data.pf,
-	renderData.description=data.description
-	return renderData;
 }
 
-function villumelding(data){
-	var errors=[];
-	if(!validate.length(data.name,3))
-		errors.push('You must enter your name');
-	if(!validate.isEmail(data.email))
-		errors.push('The email is not valid');
-	if(!validate.address(data.adresse))
-		errors.push('The adress is not valid');
-	if(!validate.required(data.val))
-		errors.push('You must select how you live');
-	if(!validate.phonenumber(data.pn))
-		errors.push('The phone number is not valid');
-	return errors;
-}
+function index(req, res) {
+  var user = req.session.user;
+  entries.listWriting(req.body.sitename, function (err, entryList) {
+  	sites.findSite(req.body.sitename, function(err, siteInfo){
+  		var renderData={
+		sitename:siteInfo[0].sitename,
+		username:siteInfo[0].username,
+		name:siteInfo[0].name,
+		background:siteInfo[0].bpurl,
+		subheader:siteInfo[0].subheader,
+		pf:siteInfo[0].purl,
+		description:siteInfo[0].text};
+		var data={
+			renderData:renderData,
+			entries: entryList};
+			res.render('sida', data)
+		});
+
+      });
+    }
+
 
 module.exports = router;
