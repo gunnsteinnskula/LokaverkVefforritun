@@ -2,19 +2,20 @@ extends layout
 
 block content
 
-	h1 #{user.name}
-	.flexbox
-		.flex
-			img.bjarnamynd(src=user.purl, alt='Mynd af mér, samt ekki')
-		.flex
-			p Notendanafn: #{user.username}
-			p Símanúmer: #{user.phone}
-			p Heimilisfang: #{user.adress}
-			p Netfang: #{user.email}
-		.wrapper
-			if sites
-				form(method="post")
-					select(class="menu" name="val")
-						each u in sites
-							option(value=u.sitename ) #{u.sitename}
-						input(type="submit" class="takki" )
+	.wrapper
+		h1 #{user.name}
+		.flexbox
+			.flex
+				img.bjarnamynd(src=user.purl, alt='Mynd af mér, samt ekki')
+			.flex
+				p Notendanafn: #{user.username}
+				p Símanúmer: #{user.phone}
+				p Heimilisfang: #{user.adress}
+				p Netfang: #{user.email}
+			.wrapper
+				if sites
+					form(method="post")
+						select(class="menu" name="val")
+							each u in sites
+								option(value=u.sitename ) #{u.sitename}
+							input(type="submit" class="takki" )
