@@ -33,11 +33,13 @@ select {
 #profpic {
   size: 10%;
   position: absolute;
-  border-radius: 150px;
   top: 13%;
   left: 42%;
   z-index: 10;
   width: 300px; }
 
-.profilepic {
+.img-circle {
   width: 90%; }
+
+header {
+  margin-bottom: 10%; }
