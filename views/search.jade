@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	body
+		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
+			header
+				h1 Eyðublað
+	.wrapper
+		form.form-horizontal(method="post")
+			.form-group
+				label.col-sm-2.control-label(for='friendName') Finna vin:	
+				.col-sm-10
+					input#sitename(type="text" name="friendName" class="friendName")
+			.form-group
+				.col-sm-offset-8
+					input(type="submit" class="takki" )
