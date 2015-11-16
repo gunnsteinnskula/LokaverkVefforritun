@@ -30,10 +30,6 @@ select {
 .flex p {
   margin-top: 1%; }
 
-.strandarpic {
-  flex: 1;
-  max-width: 98%; }
-
 #profpic {
   size: 10%;
   position: absolute;
@@ -42,3 +38,6 @@ select {
   left: 42%;
   z-index: 10;
   width: 300px; }
+
+.profilepic {
+  width: 90%; }
