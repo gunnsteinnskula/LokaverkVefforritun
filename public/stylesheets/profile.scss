@@ -1,0 +1,25 @@
+.cf:before,
+.cf:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.cf:after {
+	clear: both;
+}
+
+header {
+	padding: 5% 0% 0%;
+}
+
+h1 {
+	margin-left: -4%;
+}
+
+input[type="submit"].takki {
+	width: 40%;
+}
+
+select{
+	width: 70%;
+}
