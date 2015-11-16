@@ -8,9 +8,6 @@
 	clear: both;
 }
 
-header {
-	padding: 5% 0% 0%;
-}
 
 h1 {
 	margin-left: -4%;
@@ -23,3 +20,33 @@ input[type="submit"].takki {
 select{
 	width: 70%;
 }
+
+/* SECTION */
+.flexbox{ 
+	display: flex;
+	margin-top: -1%;
+	flex-wrap: wrap;
+}
+.flex{
+	flex: 1;
+	flex-basis: calc(765px/2);
+}
+.flex p{ margin-top: 1%; }
+
+.strandarpic{
+	flex: 1;
+	max-width: 98%;
+}
+
+header {
+}
+#profpic {
+	size: 10%;
+	position:absolute;
+	border-radius: 150px;
+	top:13%;
+	left:42%;
+	z-index:10;
+	width: 300px;
+}
+
