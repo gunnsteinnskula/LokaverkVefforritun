@@ -35,7 +35,6 @@ router.post('/', function(req, res,next) {
 
       });
     }
-    console.log(req.body.text);
 	if(req.body.text){
 	 	tagOnTheWallHandler(req,res,next)	
 	}
@@ -77,7 +76,7 @@ function index(req, res, next) {
 			var data={
 				renderData:renderData,
 				entries: entryList};
-			res.redirect('sida', data)
+			res.render('sida', data)
 			});
 
       });

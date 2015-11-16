@@ -8,7 +8,7 @@ block content
 		.wrapper
 			if friends
 				form(method="post")
-					select(class="menu" name="siteval")
+					select(class="menu" name="friendsval")
 						each u in friends
 							option(value=u.username ) #{u.username}
 						input(type="submit" class="takki" )

@@ -29,7 +29,7 @@ router.post('/', function(req,res){
       success = false;
     }
 
-    res.render('create', { title: 'Create user', post: true, success: success })
+    return res.render('create', { title: 'Create user', post: true, success: success })
   });
 	res.render('', {} );
 });

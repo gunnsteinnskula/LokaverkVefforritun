@@ -16,15 +16,18 @@ router.get('/', function(req, res) {
 
 /* POST /form */
 router.post('/', function(req, res) {
-	if(req.body.siteval){
-		console.log('ferher');
-	  	sites.gef(req.body.siteval, function (err, siteList) {
-	    res.render('profile', {
-	      sites: siteList
+	if(req.body.friendsval){
+	  	sites.gef(req.body.friendsval, function (err, siteList) {
+	  		users.fu(req.body.friendsval, function (err, results){
+	    	res.render('profile', {
+	      	sites: siteList,
+	      	user:results
+
 	    });
 	  });
-  	}
-  	if(req.body.val){
+	});
+  }
+  if(req.body.val){
 		  entries.listWriting(req.body.val, function (err, entryList) {
   			sites.findSite(req.body.val, function(err, siteInfo){
 				var renderData={
@@ -41,8 +44,9 @@ router.post('/', function(req, res) {
 				entries: entryList};
 				res.render('sida', data)
 			});
-  		});
-	}
+
+      });
+    }
 	if(req.body.text){
 	 	tagOnTheWallHandler(req,res)	
 	}
@@ -71,22 +75,21 @@ function index(req, res) {
   var user = req.session.user;
   entries.listWriting(req.body.sitename, function (err, entryList) {
   	sites.findSite(req.body.sitename, function(err, siteInfo){
-  		var renderData={
-		sitename:siteInfo[0].sitename,
-		username:siteInfo[0].username,
-		name:siteInfo[0].name,
-		background:siteInfo[0].bpurl,
-		subheader:siteInfo[0].subheader,
-		pf:siteInfo[0].purl,
-		description:siteInfo[0].text};
-		var data={
-			renderData:renderData,
-			entries: entryList};
+			var renderData={
+				sitename:siteInfo[0].sitename,
+				username:siteInfo[0].username,
+				name:siteInfo[0].name,
+				background:siteInfo[0].bpurl,
+				subheader:siteInfo[0].subheader,
+				pf:siteInfo[0].purl,
+				description:siteInfo[0].text};
+			var data={
+				renderData:renderData,
+				entries: entryList};
 			res.render('sida', data)
-		});
+			});
 
       });
     }
-
 
 module.exports = router;

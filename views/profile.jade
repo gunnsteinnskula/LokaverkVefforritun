@@ -11,10 +11,10 @@ block content
 			p Símanúmer: #{user.phone}
 			p Heimilisfang: #{user.adress}
 			p Netfang: #{user.email}
-		if site
-			form(method="post")
-				select(class="menu" name="siteval")
-					each u in site
-						option(value=u.username) #{u.username}
-					input(type="submit" class="takki")
-
+		.wrapper
+			if sites
+				form(method="post")
+					select(class="menu" name="val")
+						each u in sites
+							option(value=u.sitename ) #{u.sitename}
+						input(type="submit" class="takki" )
