@@ -4,17 +4,16 @@ block content
 	head
 		link(rel='stylesheet', href='dist/stylesheets/profile.css')
 	body
-		main.profile-content
 		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 			header
-		.middle-content
-				h1 #{user.name}
 		.wrapper
+			.middle-content
 			.bottom-content
 				.bear-section
 					.flexbox
-						.flex
+						#test
 							img.img-circle(src=user.purl, id='profpic', alt='Mynd af mér, samt ekki')
+							h1 Sunna Halldórsdóttir 
 						.flex
 							p Notendanafn: #{user.username}
 							p Símanúmer: #{user.phone}

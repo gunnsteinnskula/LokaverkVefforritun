@@ -35,7 +35,6 @@ header {
 	padding: 5% 0% 5%;
 	text-shadow: 0 2px 2px rgba(0,0,0,0.5);
 	margin-left: 18%;
-	height: 300px;
 }
 
 h1 {
