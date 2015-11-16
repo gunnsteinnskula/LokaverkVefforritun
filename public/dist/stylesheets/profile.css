@@ -36,7 +36,8 @@ select {
   top: 13%;
   left: 42%;
   z-index: 10;
-  width: 300px; }
+  width: 300px;
+  height: 300px; }
 
 .img-circle {
   width: 90%; }
