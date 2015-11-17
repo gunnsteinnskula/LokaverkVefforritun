@@ -14,12 +14,8 @@ html
 			ul
 				li.verkefnilink
 					a(href='/') Heim
-				if user
-					li.verkefnilink
-						a(href='/profile') Um mig
-				if !user
-					li.heimlink
-						a(href='/register') Nýskrá
+				li.verkefnilink
+					a(href='/profile') Um mig
 				li.verkefnilink
 					a(href='/search') Leita að vinum
 				li.heimlink
