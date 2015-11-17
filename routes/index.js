@@ -16,6 +16,5 @@ function loggedInOrNot(req, res, next) {
   }
 }
 
-console.log('=========================== ER Í LAYOUT.JS ==================================');
 module.exports = router;
 
