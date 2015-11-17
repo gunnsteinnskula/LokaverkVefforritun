@@ -8,8 +8,11 @@ block content
 						p Velkomin á síðuna Sunnstein
 						p Hér getur þú búið þér til þína eigin vefsíðu.
 		.wrapper
-			if username
-				p þú ert loggaður inn sem #{username}
+			if user
+				p þú ert loggaður inn sem #{user.username}
+					if requests
+						each u in requests
+							p #{u.friend}
 			else 
 				fieldset
 					form.form-horizontal(method="post")
