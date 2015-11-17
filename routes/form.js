@@ -4,9 +4,12 @@ var express = require('express');
 var router = express.Router();
 var validate=require('../lib/validate');
 var site = require('../lib/sites');
+var user = require('../lib/users');
 /* GET /form */
 router.get('/', function(req, res) {
   res.render('form', { errors:[] });
+	var user=req.session.user;
+	console.log(user);
 });
 
 /* POST /form */
