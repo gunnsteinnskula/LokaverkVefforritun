@@ -37,8 +37,7 @@ h1 {
   font-variant: small-caps;
   text-transform: uppercase;
   font-size: 63px;
-  color: white;
-  margin-top: -2%; }
+  color: white; }
 
 h2 {
   color: white; }
@@ -106,15 +105,17 @@ input[type="submit"] {
   font-size: 24px; }
 
 .half1 {
+  width: 46%;
+  margin: 1%;
   background-size: 100%;
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center;
   float: right;
-  width: 46%;
-  margin: 1%;
-  padding-bottom: 44%;
   margin-bottom: 7.5%; }
+
+.halfs {
+  padding-bottom: 10%; }
 
 .profilepic {
   width: 90%; }

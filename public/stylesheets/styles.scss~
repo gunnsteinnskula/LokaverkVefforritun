@@ -28,13 +28,13 @@ body {
 	background-size: 100%;
 	background-position:center;
 	background-repeat: no-repeat;
-
 }
 
 header {
 	padding: 5% 0% 5%;
 	text-shadow: 0 2px 2px rgba(0,0,0,0.5);
 	margin-left: 18%;
+	height: 300px;
 }
 
 h1 {
@@ -43,7 +43,6 @@ h1 {
 	font-variant: small-caps; text-transform: uppercase;
 	font-size: 63px;
 	color: white;
-	margin-top: -2%;
 }
 
 h2 {
@@ -104,6 +103,7 @@ input[type="submit"] {
 	flex: 1;
 	flex-basis: calc(765px/2);
 }
+
 .flex p{ margin-top: 1%; }
 
 .strandarpic{
@@ -122,13 +122,13 @@ input[type="submit"] {
 }
 
 .half1{
+	width: 46%;
+	margin: 1%;
 	background-size: 100%;
 	box-sizing: border-box;
 	background-repeat: no-repeat;
 	background-position:center;
 	float: right;
-	width: 46%;
-	margin: 1%;
 	padding-bottom: 44%;
 	margin-bottom: 7.5%
 }
