@@ -43,7 +43,11 @@ html
 				p þú ert loggaður inn sem #{user.username}
 					if requests
 						each u in requests
-							p #{u.friend}
+							p(name='nafn', class='nafn', value=u.friend)
+							input(type='button', value='Samþykja #{u.friend}', class='formButton')
+							input(type='button', value='Hundsa #{u.friend}' class='formButton')
+
+
 			else 
 				fieldset
 					form.form-horizontal(method="post")
@@ -58,3 +62,6 @@ html
 						.form-group
 							.col-sm-offset-8
 								input(type="submit" class="takki" )
+
+	
+			script(src="/javascripts/frontend.js")

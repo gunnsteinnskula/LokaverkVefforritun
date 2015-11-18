@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express');
 var router = express.Router();
 var users=require('../lib/users');
@@ -9,10 +7,15 @@ router.post('/', loginHandler);
 router.get('/logout', logoutHandler);
 
 
+
+
+
+
 function loggedInOrNot(req, res, next) {
 	if (req.session.user) {
 		var user=req.session.user;
 		users.listFriends(user.username, false, function(err, results){
+      console.log(results);
 			res.render('index', {
 				user:user,
 				requests:results
@@ -22,6 +25,16 @@ function loggedInOrNot(req, res, next) {
 	else {
 		res.render('index', {title: 'Express'});
 	}
+}
+
+function doAction(value){
+  console.log(value);
+  var res = value.split(" ");
+  var respond;
+  if(res[0]==='Samþykja')
+    respond=true;
+  else respond=false
+  
 }
 
 function loginHandler(req, res, next) {
@@ -42,6 +55,7 @@ function loginHandler(req, res, next) {
       res.render('index', {title: 'Express'});
     }
   });
+  next;
 }
 
 
