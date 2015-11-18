@@ -27,8 +27,7 @@ function loggedInOrNot(req, res, next) {
 function loginHandler(req, res, next) {
   var username = req.body.username;
   var password = req.body.password;
-
-  user.auth(username, password, function (err, user) {
+  users.auth(username, password, function (err, user) {
     if (user) {
       req.session.regenerate(function (){
         req.session.user = user;

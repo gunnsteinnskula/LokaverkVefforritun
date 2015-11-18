@@ -14,7 +14,7 @@ html
 				ul
 					li.verkefnilink
 						a(href='/') Heim
-					if username
+					if user
 						li.verkefnilink
 							a(href='/profile') Um mig
 						li.verkefnilink
@@ -27,7 +27,7 @@ html
 							a(href='/friends') Vinir mínir
 						li.heimlink
 							a(href='/logout') Útskrá
-					if !username
+					if !user
 						li.heimlink
 							a(href='/register') Nýskrá
 					li.heimlink
