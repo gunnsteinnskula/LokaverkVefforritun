@@ -1,0 +1,17 @@
+.cf:before,
+.cf:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.cf:after {
+	clear: both;
+}
+
+#friendval {
+	margin-top: 2%;
+}
+.btn-danger{
+	margin-left: 1%;
+}
+
