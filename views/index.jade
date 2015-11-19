@@ -9,6 +9,7 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(href='https://fonts.googleapis.com/css?family=Raleway|Bree+Serif', rel='stylesheet', type='text/css')
 		link(rel='stylesheet', href='dist/stylesheets/styles.css')
+		link(rel='stylesheet', href='dist/stylesheets/index.css')
 		body
 			nav
 				ul
@@ -30,8 +31,8 @@ html
 					if !user
 						li.heimlink
 							a(href='/register') Nýskrá
-					li.heimlink
-						a(href='/sida') Dæmi um síðu
+						li.heimlink
+							a(href='/sida') Dæmi um síðu
 			main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 				header
 					h1 Sunnsteinn 
@@ -39,15 +40,15 @@ html
 						p Velkomin á síðuna Sunnstein
 						p Hér getur þú búið þér til þína eigin vefsíðu.
 		.wrapper
+			if data
+				p Villa við auðkenningu
 			if user
-				p þú ert loggaður inn sem #{user.username}
+				h3 Þú ert skráð/ur inn sem #{user.username}
 					if requests
 						each u in requests
 							p(name='nafn', class='nafn', value=u.friend)
-							input(type='button', value='Samþykja #{u.friend}', class='formButton')
-							input(type='button', value='Hundsa #{u.friend}' class='formButton')
-
-
+								input(id='friendval' type='button', class="btn btn-success formButton", value='Samþykja #{u.friend}')
+								input(id='friendval' type='button', class="btn btn-danger formButton", value='Hunsa #{u.friend}')
 			else 
 				fieldset
 					form.form-horizontal(method="post")
@@ -65,3 +66,4 @@ html
 
 	
 			script(src="/javascripts/frontend.js")
+			script(src="/bower_components/jquery/dist/jquery.min.js")

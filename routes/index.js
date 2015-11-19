@@ -63,7 +63,7 @@ function loginHandler(req, res, next) {
         error: true
       };
       console.log(data);
-      res.render('index', data);
+      res.render('index', {data:data});
     }
   });
 }

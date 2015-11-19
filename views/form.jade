@@ -6,6 +6,8 @@ block content
 			header
 				h1 Eyðublað
 	.wrapper
+		if vm
+			p #{vm}
 		form.form-horizontal(method="post")
 			.form-group
 				label.col-sm-2.control-label(for='sitename') Nafn Síðu:	
@@ -14,23 +16,23 @@ block content
 			.form-group
 				label.col-sm-2.control-label(for='name') Nafn:
 				.col-md-10
-					input#name(type="text" name="name" class="name")
+					input#name(type="text" name="name" class="name" value=renderData.name)
 			.form-group
 				label.col-sm-2.control-label(for='subheader') Undirfyrirsögn:
 				.col-md-10
-					input#subheader(type="text" name="subheader" clas="subheader")
+					input#subheader(type="text" name="subheader" clas="subheader" value=renderData.subheader)
 			.form-group
 				label.col-sm-2.control-label(for='description') Texti:
 				.col-md-10
-					textarea#description.form-control(type="text" rows='7' name="description" class="description")
+					textarea#description.form-control(type="text" rows='7' name="description" class="description") #{renderData.description}
 			.form-group
 				label.col-sm-2.control-label(for='pf') Mynd af þér:
 				.col-md-10
-					input#pf(type="text" name="pf" class="pf")
+					input#pf(type="text" name="pf" class="pf" value=renderData.pf)
 			.form-group
 				label.col-sm-2.control-label(for='background') Bakgrunnsmynd:
 				.col-md-10
-					input#background(type="text" name="background" class="background")
+					input#background(type="text" name="background" class="background" value=renderData.background)
 				.form-group
 					.col-sm-offset-8
 						input(type="submit" class="takki" )

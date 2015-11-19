@@ -9,7 +9,9 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(href='https://fonts.googleapis.com/css?family=Raleway|Bree+Serif', rel='stylesheet', type='text/css')
 		link(rel='stylesheet', href='dist/stylesheets/styles.css')
+	block content
 	body
+	block navigator
 		nav
 			ul
 				li.verkefnilink
@@ -17,17 +19,18 @@ html
 				li.verkefnilink
 					a(href='/profile') Um mig
 				li.verkefnilink
+					a(href='/register') Nýskrá
+				li.verkefnilink
 					a(href='/search') Leita að vinum
-				li.heimlink
+				li.verkefnilink
 					a(href='/find') Mínar síður
-				li.heimlink
+				li.verkefnilink
 					a(href='/form') Ný síða
-				li.heimlink
+				li.verkefnilink
 					a(href='/sida') Dæmi um síðu
-				li.heimlink
+				li.verkefnilink
 					a(href='/friends') Vinir mínir
-				li.heimlink
+				li.verkefnilink
 					a(href='/logout') Útskrá
 	main
-		block content
 script(src="/javascripts/frontend.js")
