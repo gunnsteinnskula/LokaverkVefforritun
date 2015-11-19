@@ -6,7 +6,10 @@ router.get('/', loggedInOrNot);
 router.post('/', loginHandler);
 router.get('/logout', logoutHandler);
 
-
+router.post('/respondfriend', function(req, res) {
+    var whatUserSent = req.body.pressed;
+    doAction(req, res, whatUserSent);
+  });
 
 
 
@@ -15,7 +18,6 @@ function loggedInOrNot(req, res, next) {
 	if (req.session.user) {
 		var user=req.session.user;
 		users.listFriends(user.username, false, function(err, results){
-      console.log(results);
 			res.render('index', {
 				user:user,
 				requests:results
@@ -27,14 +29,22 @@ function loggedInOrNot(req, res, next) {
 	}
 }
 
-function doAction(value){
-  console.log(value);
-  var res = value.split(" ");
+function doAction(req, res, value){
+  var o = value.split(" ");
   var respond;
-  if(res[0]==='Samþykja')
+  if(o[0]==='Samþykja')
     respond=true;
-  else respond=false
-  
+  else respond=false;
+  console.log('þetta er respindið: '+ respond)
+  users.respondFriend(req.session.user.username, o[1], respond, function (err, status) {
+    if (err) {
+      //verð að kippa þessu í lag
+      res.redirect('/form');
+    } else {
+      //verð að kippa þessu í lag
+        res.redirect('/search');
+      }
+  });
 }
 
 function loginHandler(req, res, next) {
@@ -48,14 +58,14 @@ function loginHandler(req, res, next) {
       });
     } else {
       var data = {
-        title: 'Login',
+        villa: 'villa við auðkenningu',
         username: username,
         error: true
       };
-      res.render('index', {title: 'Express'});
+      console.log(data);
+      res.render('index', data);
     }
   });
-  next;
 }
 
 

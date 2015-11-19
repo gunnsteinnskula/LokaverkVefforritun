@@ -7,10 +7,13 @@ var site = require('../lib/sites');
 var user = require('../lib/users');
 /* GET /form */
 router.get('/', function(req, res) {
-  res.render('form', { errors:[] });
+	var renderData={};
+  res.render('form', { renderData:renderData,
+  	errors:[] });
 	var user=req.session.user;
 	console.log(user);
 });
+
 
 /* POST /form */
 router.post('/', function(req, res) {
@@ -22,13 +25,18 @@ router.post('/', function(req, res) {
 	subheader:'',
 	pf:'',
 	description:''};
-	putIn(renderData,req.body, req.session);
 	if(renderData.background === ''){
 		renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
 	}
+	putIn(renderData,req.body, req.session);
 	site.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.pf, renderData.description, renderData.sitename, function (err, status) {
     if (err) {
-      console.error(err);
+    	console.log(err);
+      	console.error(err);
+      	var villa='Þetta síðunafn hefur verið notað áður, vinsamlegast finndu annað nafn á síðuna'
+      	res.render('form', {
+      		renderData:renderData, 
+      		vm:villa});
     }
 
     var success = true;
@@ -36,10 +44,13 @@ router.post('/', function(req, res) {
     if (err || !status) {
       success = false;
     }
+    if(success){
+    	res.render('sida', {renderData:renderData} );
 
-    res.render('create', { title: 'Create site', post: true, success: success })
+
+    }
+    
   });
-	res.render('sida', {renderData:renderData} );
 });
 
 

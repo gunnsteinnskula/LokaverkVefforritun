@@ -36,31 +36,33 @@ html
 			header
 				h1 Eyðublað
 	.wrapper
+		if villa
+			p #{villa}
 		form.form-horizontal(method="post")
 			.form-group
 				label.col-sm-2.control-label(for='name') Nafn:	
 				.col-sm-10
-					input#sitename(type="text" name="name" class="name")
+					input#sitename(type="text" name="name" class="name" value=renderData.name)
 			.form-group
 				label.col-sm-2.control-label(for='username') Notendanafn:
 				.col-md-10
-					input#username(type="text" name="username" class="username")
+					input#username(type="text" name="username" class="username" value=renderData.username)
 			.form-group
 				label.col-sm-2.control-label(for='pf') Prófíl mynd:
 				.col-md-10
-					input#name(type="text" name="pf" class="pf")
+					input#name(type="text" name="pf" class="pf" value=renderData.pf)
 			.form-group
 				label.col-sm-2.control-label(for='adresse') Heimilisfang:
 				.col-md-10
-					input#background(type="text" name="adresse" class="adresse")
+					input#background(type="text" name="adresse" class="adresse" value=renderData.home)
 			.form-group
 				label.col-sm-2.control-label(for='email') Netfang:
 				.col-md-10
-					input#subheader(type="text" name="email" clas="email")
+					input#subheader(type="text" name="email" clas="email" value=renderData.email)
 			.form-group
 				label.col-sm-2.control-label(for='pn') Símanúmer:
 				.col-md-10
-					input#pf(type="text" name="pn" class="pn")
+					input#pf(type="text" name="pn" class="pn" value=renderData.pn)
 			.form-group
 				label.col-sm-2.control-label(for='pw') Lykilorð:
 				.col-md-10

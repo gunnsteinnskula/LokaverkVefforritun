@@ -7,31 +7,46 @@ var users = require('../lib/users');
 /* GET home page. */
 router.get('/', function(req, res) {
 
-  res.render('register', {  });
+  var renderData={};
+  res.render('register', { renderData:renderData });
 });
 
 router.post('/', function(req,res){
-	var username=req.body.username;
-	var name= req.body.name;
-	var pf=req.body.pf;
-	var home=req.body.adresse;
-	var email = req.body.email;
-	var pn = req.body.pn;
-	var pw = req.body.pw;
-	users.createUser(username, name, pw, pf, home, email, pn, function (err, status) {
-    if (err) {
-      console.error(err);
-    }
+  var renderData={
+	username:req.body.username,
+	name:req.body.name,
+	pf:req.body.pf,
+	home:req.body.adresse,
+	email:req.body.email,
+	pn:req.body.pn,
+	pw:req.body.pw};
+  if(renderData.pw!=='')
+    users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, function (err, status) {
+      if (err) {
+          console.error(err);
+          var vm='Þessi notandi er núþegar til, vinsamlegast finndu nýtt notendanafn';
+          res.render('register', {
+            renderData:renderData,
+            villa:vm
+          });
+        }
 
-    var success = true;
+        var success = true;
 
-    if (err || !status) {
-      success = false;
-    }
+        if (err || !status) {
+          success = false;
+        }
+        if(success)
+          res.render('create', { title: 'Create user', post: true, success: success });
 
-    return res.render('create', { title: 'Create user', post: true, success: success })
-  });
-	res.render('', {} );
+        });
+  else {
+    var vm='Þetta lykilorð er ekki nógu langt, það er ekkert öryggi falið í því';
+          res.render('register', {
+            renderData:renderData,
+            villa:vm
+          });
+        }
 });
 
 module.exports = router;

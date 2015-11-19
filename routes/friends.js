@@ -7,11 +7,15 @@ var sites = require('../lib/sites');
 var entries = require('../lib/wall');
 /* GET /form */
 router.get('/', function(req, res) {
-	users.listUsers(function (err, userList) {
-		res.render('friends', {
-			friends: userList
+	users.listFriends(req.session.user.username, true, function (err, userList) {
+		console.log(userList);
+		users.listFriends2(req.session.user.username, true, function (err, userList2) {
+			console.log(userList2);
+			res.render('friends', {
+				friends: userList.concat(userList2)
 		});
 	});
+});
 });
 
 /* POST /form */

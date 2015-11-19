@@ -19,8 +19,10 @@ router.post('/', function(req, res) {
     if (err || !status) {
       success = false;
     }
+    if(success)
+      err='Vini hefur verið bætt við, nú er bara að bíða eftir að hann svari'
 
-    return res.render('search', { title: 'Create user', post: true, success: success })
+    return res.render('search', { title: 'Create user', post: true, success: success, respond:err })
   });
 });
 

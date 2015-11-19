@@ -5,11 +5,19 @@ document.addEventListener('DOMContentLoaded',function() {
 });
 
 
+
+
 function setjumTakkana(){
 	var buttons = document.querySelectorAll('.formButton');
   	for (var i = 0; i < buttons.length; i++) {
     	buttons[i].addEventListener('click', function() {
-      	console.log(this.value);
-    });
-  }
+    		$.ajax({
+				url: '/respondfriend',
+				type: 'POST',
+				data: {pressed: this.value},
+				success: function(data) {
+				}
+			});
+    	});
+    }
 }
