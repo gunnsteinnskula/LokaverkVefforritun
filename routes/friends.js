@@ -24,9 +24,8 @@ router.post('/', function(req, res) {
 	  	sites.gef(req.body.friendsval, function (err, siteList) {
 	  		users.fu(req.body.friendsval, function (err, results){
 	    	res.render('profile', {
-	      	sites: siteList,
-	      	user:results
-
+	    	user:results,
+	      	sites: siteList
 	    });
 	  });
 	});
@@ -45,7 +44,7 @@ router.post('/', function(req, res) {
 				};
 				var data={
 				renderData:renderData,
-				entries: entryList};
+				entries: entryList.reverse()};
 				res.render('sida', data)
 			});
 
