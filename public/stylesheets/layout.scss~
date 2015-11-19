@@ -10,7 +10,7 @@
 
 
 nav {
-	width: 170px;
+	width: 165px;
 	background-color: rgba(0, 0, 0, 0.8);
 	top: 0px;
 	bottom: 0%;
@@ -28,12 +28,29 @@ nav a {
 	margin: 0 0 0 -15%;
 }
 
-nav a:hover { border-bottom: 3px solid #f1f1f1; }
+nav a:hover { border-bottom: 3px solid #ffffff; }
 
 .home{
 	border-bottom: 3px solid #f1f1f1;
 }
 
-.heimlink{ margin: 43% 0% 0%;}
-
 .verkefnilink{ margin: 34% 0%;}
+
+@media (max-width: 768px){
+	nav{
+		position: relative;
+		width: 100%;
+		padding: 4% 0%;
+		height: 730px;
+		margin-top: 5%;
+	}
+	nav a {
+		color: #ffffff;
+		text-transform:uppercase;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 16px;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
