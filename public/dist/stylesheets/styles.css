@@ -21,7 +21,7 @@ body {
 /* HEADER */
 .top-content {
   font-family: 'Bree Serif';
-  background-size: 100%;
+  background-size: 1200px;
   background-position: center;
   background-repeat: no-repeat; }
 
@@ -141,7 +141,7 @@ ul {
   margin: 34% 0% 0%; }
 
 .verkefnilink {
-  margin: 34% 0%; }
+  margin: 34% 0% 34% 0%; }
 
 /* FOOTER */
 .site-footer {
@@ -185,11 +185,3 @@ ul {
     width: 100%;
     margin: 1% 0%;
     padding-bottom: 97%; } }
-
-@media only screen and (max-width: 767px) {
-  header {
-    word-break: break-all; }
-  .socials {
-    margin: 0% 9%; }
-  h4 {
-    font-size: 30px; } }

@@ -5,13 +5,12 @@ block content
 		link(rel='stylesheet', href='dist/stylesheets/profile.css')
 	body
 		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
-			.middle-content
-					#test
-						img.img-circle(src=user.purl, id='profpic', alt='Mynd af mér, samt ekki')
-				.inside-middle
-					h1 #{user.name}
 			header
 		.wrapper
+			.middle-content
+				.test
+					img.img-circle(src=user.purl, id='profpic', alt='Mynd af mér, samt ekki')
+					h1 #{user.name}
 			.bottom-content
 				section.review-section
 					.flexbox
@@ -31,8 +30,8 @@ block content
 							p Heimilisfang: #{user.adress}
 							p Netfang: #{user.email}
 				section.review-section
-					.halfs
-						.half2
+					.flexbox
+						.flex
 							h2 Mínir vinir!
 							p Gunnnsteinn
 							p Gunnnsteinn
@@ -45,7 +44,7 @@ block content
 							p Gunnnsteinn
 							p Gunnnsteinn
 							p Gunnnsteinn
-						.half1
+						.flex
 							h2 Mínar Síður
 								if sites
 									form(method="post")

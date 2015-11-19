@@ -25,7 +25,7 @@ body {
 /* HEADER */
 .top-content{
 	font-family: 'Bree Serif';
-	background-size: 100%;
+	background-size: 1200px;
 	background-position:center;
 	background-repeat: no-repeat;
 }
@@ -160,7 +160,7 @@ ul{ list-style-type: none; }
 
 .heimlink{ margin: 34% 0% 0%;}
 
-.verkefnilink{ margin: 34% 0%;}
+.verkefnilink{ margin: 34% 0% 34% 0%;}
 
 /* FOOTER */
 .site-footer { padding: 20px; }
@@ -184,7 +184,9 @@ ul{ list-style-type: none; }
 
 /* SCALING */
 @media only screen and (max-width: 1199px){
+
 	html{ margin: 0 0 0 0; }
+
 
 
 	h1 {
@@ -214,19 +216,5 @@ ul{ list-style-type: none; }
 
 }
 @media only screen and (max-width: 767px){
-	header{
-		word-break: break-all;
-	}
-
-	.socials{ 
-		margin: 0% 9%;
-	}
-
-
-
-
-	.half1{
-	}
-	h4{ font-size: 30px; }
 }
 
