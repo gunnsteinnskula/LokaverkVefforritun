@@ -53,3 +53,4 @@ node_modules.textClipping
 *.swp
 *.swo
 *~
+*.un~

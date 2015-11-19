@@ -28,12 +28,30 @@ nav a {
 	margin: 0 0 0 -15%;
 }
 
-nav a:hover { border-bottom: 3px solid #f1f1f1; }
+nav a:hover { border-bottom: 3px solid #ffffff; }
 
 .home{
 	border-bottom: 3px solid #f1f1f1;
 }
 
-.heimlink{ margin: 43% 0% 0%;}
-
 .verkefnilink{ margin: 34% 0%;}
+
+@media (max-width: 768px){
+	nav{
+		position: relative;
+		width: 100%;
+		padding-bottom: 10%;
+		height: 300px;
+	}
+	body{ margin: 0 0 100px;
+	}
+	nav a {
+		color: #ffffff;
+		text-transform:uppercase;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 16px;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
