@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
   res.render('register', { renderData:renderData });
 });
 
+
 router.post('/', function(req,res){
   var renderData={
 	username:req.body.username,
@@ -37,7 +38,7 @@ router.post('/', function(req,res){
           success = false;
         }
         if(success)
-          res.render('create', { title: 'Create user', post: true, success: success });
+          res.render('index', { });
 
         });
   else {
