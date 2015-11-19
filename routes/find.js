@@ -29,7 +29,8 @@ router.post('/', function(req, res,next) {
 				};
 				var data={
 				renderData:renderData,
-				entries: entryList};
+				entries: entryList.reverse()
+			};
 				res.render('sida', data)
 			});
 

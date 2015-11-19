@@ -7,11 +7,11 @@ var entries = require('../lib/wall');
 
 router.get('/', function(req, res) {
   	sites.gef(req.session.user.username, function (err, siteList) {
-    res.render('profile', {
-      sites: siteList,
-      user:req.session.user
-    });
-  });
+    	res.render('profile', {
+      		user:req.session.user,
+      		sites: siteList
+    	});
+  	});
 });
 
 router.post('/', function(req, res,next) {
@@ -29,7 +29,7 @@ router.post('/', function(req, res,next) {
 				};
 				var data={
 				renderData:renderData,
-				entries: entryList};
+				entries: entryList.reverse()};
 				res.render('sida', data)
 			});
 
