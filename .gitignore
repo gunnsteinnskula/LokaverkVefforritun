@@ -44,6 +44,9 @@ node_modules
 ############
 .env
 
+## json ##
+package.json
+
 # VIM generated files #
 ######################
 ..gitignore.un~
@@ -53,4 +56,8 @@ node_modules.textClipping
 *.swp
 *.swo
 *~
+
 *.un~
+public/styleshees/.layout.scss.un~
+.*
+!/.gitignore

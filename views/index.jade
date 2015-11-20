@@ -3,7 +3,6 @@ html
 	head
 		title=title
 		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet")
-		link(rel='stylesheet', href='dist/stylesheets/layout.css')
 		meta(name='viewport', content='width=device-width, initial-cale=1')
 		meta(charset='UTF-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -11,28 +10,6 @@ html
 		link(rel='stylesheet', href='dist/stylesheets/styles.css')
 		link(rel='stylesheet', href='dist/stylesheets/index.css')
 		body
-			nav
-				ul
-					li.verkefnilink
-						a(href='/') Heim
-					if user
-						li.verkefnilink
-							a(href='/profile') Um mig
-						li.verkefnilink
-							a(href='/search') Leita að vinum
-						li.heimlink
-							a(href='/find') Mínar síður
-						li.heimlink
-							a(href='/form') Ný síða
-						li.heimlink
-							a(href='/friends') Vinir mínir
-						li.heimlink
-							a(href='/logout') Útskrá
-					if !user
-						li.heimlink
-							a(href='/register') Nýskrá
-						li.heimlink
-							a(href='/sida') Dæmi um síðu
 			main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 				header
 					h1 Sunnsteinn 
@@ -45,6 +22,7 @@ html
 			if user
 				h3 Þú ert skráð/ur inn sem #{user.username}
 					if requests
+						h3 Þú ert með vinabeiðni/r!
 						each u in requests
 							p(name='nafn', class='nafn', value=u.friend)
 								input(id='friendval' type='button', class="btn btn-success formButton", value='Samþykja #{u.friend}')
@@ -63,6 +41,28 @@ html
 						.form-group
 							.col-sm-offset-8
 								input(type="submit" class="takki" )
+		nav
+			ul
+				li.verkefnilink
+					a(href='/') Heim
+				if user
+					li.verkefnilink
+						a(href='/profile') Um mig
+					li.verkefnilink
+						a(href='/search') Leita að vinum
+					li.verkefnilink
+						a(href='/find') Mínar síður
+					li.verkefnilink
+						a(href='/form') Ný síða
+					li.verkefnilink
+						a(href='/friends') Vinir mínir
+					li.verkefnilink
+						a(href='/logout') Útskrá
+				if !user
+					li.heimlink
+						a(href='/register') Nýskrá
+					li.heimlink
+						a(href='/sida') Dæmi um síðu
 
 	
 			script(src="/javascripts/frontend.js")

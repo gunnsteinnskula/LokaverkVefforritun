@@ -24,23 +24,23 @@ select{
 
 
 .diamond, .dia {
-  margin: 0 auto;
-  transform-origin: 50% 50%;
-  overflow: hidden;
-  width: 300px;
-  height: 300px;
+	margin: 0 auto;
+	transform-origin: 50% 50%;
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
 }
 .diamond {
-  transform: rotate(45deg) translateY(-25px) translateX(-25px);
+	transform: rotate(45deg) translateY(-25px) translateX(-25px);
 }
 .diamond .dia {
-  width: 380px;
-  height: 380px;
-  transform: rotate(-45deg);
+	width: 380px;
+	height: 380px;
+	transform: rotate(-45deg);
 }
 .diamond img {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 
@@ -73,7 +73,7 @@ select{
 	margin: -300px auto 0 auto;
 }
 #profpic {
-		box-shadow: 0px 1px 6px 1px;
+	box-shadow: 0px 1px 6px 1px;
 }
 
 h1 {
@@ -97,8 +97,8 @@ h2 {
 		margin-left: -8%;
 	}
 	.verkefnilink{ 
-	margin: 6% 0% 0% 0%;
-	text-align: center;
-}
+		margin: 6% 0% 0% 0%;
+		text-align: center;
+	}
 }
 

@@ -1,14 +1,19 @@
 extends layout
 
 block content
+	head
+		link(rel='stylesheet', href='dist/stylesheets/friends.css')
 	body
 		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 			header
-				h1 Vinir mínir 
+				h1 Vinirnir mínir
+				h2 Hér er listi af vinum mínum!
 		.wrapper
 			if friends
+				h3 Velja vin
 				form(method="post")
 					select(class="menu" name="friendsval")
 						each u in friends
 							option(value=u.friend ) #{u.friend}
 						input(type="submit" class="takki" )
+

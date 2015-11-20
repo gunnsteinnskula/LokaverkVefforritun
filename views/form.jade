@@ -1,10 +1,13 @@
 extends layout
 
 block content
+	head
+		link(rel='stylesheet', href='dist/stylesheets/form.css')
 	body
 		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 			header
-				h1 Eyðublað
+				h1 Ný Síða
+				h2 Hér getur þú sett upp þína eigin vefsíðu!
 	.wrapper
 		if vm
 			p #{vm}
