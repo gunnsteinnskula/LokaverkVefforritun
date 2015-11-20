@@ -1,0 +1,40 @@
+.cf:before,
+.cf:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.cf:after {
+	clear: both;
+}
+
+
+
+input[type="submit"].takki {
+	width: 51%;
+}
+
+select{
+	width: 51%;
+}
+
+/* SECTION */
+
+
+.filler {
+	margin: 25% 0%;
+}
+
+@media only screen and (max-width: 767px){
+
+	.test{
+		size: 10%;
+		text-align: center;
+		margin-left: -8%;
+	}
+	.verkefnilink{ 
+		margin: 6% 0% 0% 0%;
+		text-align: center;
+	}
+}
+
