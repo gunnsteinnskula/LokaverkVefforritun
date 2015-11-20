@@ -42,7 +42,6 @@ node_modules
 
 # DATABASE #
 ############
-.env
 
 ## json ##
 package.json
