@@ -65,9 +65,10 @@ function postRegister(req,res){
   home:req.body.adresse,
   email:req.body.email,
   pn:req.body.pn,
+  description:body.description,
   pw:req.body.pw};
   if(renderData.pw!=='')
-    users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, function (err, status) {
+    users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, function (err, status) {
       if (err) {
           console.error(err);
           var vm='Þessi notandi er núþegar til, vinsamlegast finndu nýtt notendanafn';
@@ -98,19 +99,24 @@ function postRegister(req,res){
 
 
 
-
 function getRegister(req, res) {
   var renderData={};
   res.render('register', { renderData:renderData });
 }
 
 function getProfile(req, res) {
-    sites.gef(req.session.user.username, function (err, siteList) {
-      res.render('profile', {
+  var user=req.session.user;
+  users.listFriends(user.username, true, function (err, friendsList){
+    users.listFriends2(user.username, true, function (err, friendsList2){
+      sites.gef(user.username, function (err, siteList) {
+        res.render('profile', {
           user:req.session.user,
-          sites: siteList
+          sites: siteList,
+          friends: friendsList.concat(friendsList2)
+        });
       });
     });
+  });
 }
 
 function respond(req, res) {
@@ -121,7 +127,7 @@ function respond(req, res) {
 function loggedInOrNot(req, res, next) {
   if (req.session.user) {
     var user=req.session.user;
-    users.listFriends(user.username, false, function(err, results){
+    users.listFriends(user.username, false, function (err, results){
       res.render('index', {
         user:user,
         requests:results
@@ -141,14 +147,7 @@ function doAction(req, res, value){
   else respond=false;
   console.log('þetta er respindið: '+ respond)
   users.respondFriend(req.session.user.username, o[1], respond, function (err, status) {
-    if (err) {
-      //verð að kippa þessu í lag
-      res.redirect('/form');
-    } else {
-      //verð að kippa þessu í lag
-        res.redirect('/search');
-      }
-  });
+   });
 }
 
 function loginHandler(req, res, next) {
@@ -200,7 +199,6 @@ function postFriendsHandler(req, res, next) {
 }
 function getFriends(req, res) {
   users.listFriends(req.session.user.username, true, function (err, userList) {
-    console.log(userList);
     users.listFriends2(req.session.user.username, true, function (err, userList2) {
       res.render('friends', {
         friends: userList.concat(userList2)
