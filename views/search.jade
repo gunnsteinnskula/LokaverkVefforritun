@@ -10,11 +10,12 @@ block content
 	.wrapper
 		form.form-horizontal(method="post")
 			.form-group
-				label.col-sm-2.control-label(for='friendName') Finna vin:	
-				.col-sm-10
-					input#sitename(type="text" name="friendName" class="friendName")
+				.col-md-2
+					label(for='sitename') Finna vin:	
+				.col-md-11
+					input(type="text" name="friendName" id="sitename" class="friendName")
 			.form-group
-				.col-sm-offset-8
+				.col-md-1
 					input(type="submit" class="takki" )
 		if respond
 			p #{respond}

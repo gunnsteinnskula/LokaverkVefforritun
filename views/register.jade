@@ -10,28 +10,6 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Raleway|Bree+Serif', rel='stylesheet', type='text/css')
 		link(rel='stylesheet', href='dist/stylesheets/styles.css')
 		body
-			nav
-				ul
-					li.verkefnilink
-						a(href='/') Heim
-					if username
-						li.verkefnilink
-							a(href='/profile') Um mig
-						li.verkefnilink
-							a(href='/search') Leita að vinum
-						li.heimlink
-							a(href='/find') Mínar síður
-						li.heimlink
-							a(href='/form') Ný síða
-						li.heimlink
-							a(href='/friends') Vinir mínir
-						li.heimlink
-							a(href='/logout') Útskrá
-					if !username
-						li.heimlink
-							a(href='/register') Nýskrá
-					li.heimlink
-						a(href='/sida') Dæmi um síðu
 		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 			header
 				h1 Eyðublað
@@ -67,6 +45,13 @@ html
 				label.col-sm-2.control-label(for='pw') Lykilorð:
 				.col-md-10
 					input#pf(type="text" name="pw" class="pw")
-				.form-group
-					.col-sm-offset-8
-						input(type="submit" class="takki" )
+				.col-md-2
+					input(type="submit" class="takki" )
+	nav
+		ul
+			li.verkefnilink
+				a(href='/') Heim
+			li.heimlink
+				a(href='/register') Nýskrá
+			li.heimlink
+				a(href='/sida') Dæmi um síðu

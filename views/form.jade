@@ -13,29 +13,29 @@ block content
 			p #{vm}
 		form.form-horizontal(method="post")
 			.form-group
-				label.col-sm-2.control-label(for='sitename') Nafn Síðu:	
-				.col-sm-10
+				label.col-md-3(for='sitename') Nafn Síðu:	
+				.col-md-9
 					input#sitename(type="text" name="sitename" class="sitename")
 			.form-group
-				label.col-sm-2.control-label(for='name') Nafn:
-				.col-md-10
+				label.col-md-3(for='name') Fyrirsögn:
+				.col-md-9
 					input#name(type="text" name="name" class="name" value=renderData.name)
 			.form-group
-				label.col-sm-2.control-label(for='subheader') Undirfyrirsögn:
-				.col-md-10
+				label.col-md-3(for='subheader') Undirfyrirsögn:
+				.col-md-9
 					input#subheader(type="text" name="subheader" clas="subheader" value=renderData.subheader)
 			.form-group
-				label.col-sm-2.control-label(for='description') Texti:
-				.col-md-10
+				label.col-md-3(for='description') Texti:
+				.col-md-9
 					textarea#description.form-control(type="text" rows='7' name="description" class="description") #{renderData.description}
 			.form-group
-				label.col-sm-2.control-label(for='pf') Mynd af þér:
-				.col-md-10
-					input#pf(type="text" name="pf" class="pf" value=renderData.pf)
+				label.col-md-3(for='pf') Mynd við fyrirsögn:
+				.col-md-9
+					input#pf(type="text" name="pf" placeholder="imgur.com/mynd.jpg" class="pf" value=renderData.pf)
 			.form-group
-				label.col-sm-2.control-label(for='background') Bakgrunnsmynd:
-				.col-md-10
-					input#background(type="text" name="background" class="background" value=renderData.background)
-				.form-group
-					.col-sm-offset-8
-						input(type="submit" class="takki" )
+				label.col-md-3(for='background') Bakgrunnsmynd:
+				.col-md-9
+					input#background(type="text" placeholder="imgur.com/mynd.jpg" name="background" class="background" value=renderData.background)
+			.form-group
+				.col-md-3
+					input(type="submit" class="takki" )

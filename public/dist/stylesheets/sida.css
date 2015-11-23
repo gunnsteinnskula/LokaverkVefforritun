@@ -8,17 +8,12 @@
 .cf:after {
   clear: both; }
 
-input[type="submit"].takki {
-  width: 51%; }
-
-select {
-  width: 51%; }
-
-/* SECTION */
-.filler {
-  margin: 25% 0%; }
+.wrapper {
+  margin-right: 5%; }
 
 @media only screen and (max-width: 767px) {
+  .wrapper {
+    margin-right: 10%; }
   .test {
     size: 10%;
     text-align: center;

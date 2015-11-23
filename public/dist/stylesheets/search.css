@@ -9,9 +9,7 @@
   clear: both; }
 
 input[type="submit"].takki {
-  width: 51%;
-  margin-top: 0%;
-  margin-left: 2.5%; }
+  margin-top: 0%; }
 
 select {
   width: 51%; }

@@ -31,21 +31,25 @@ html
 				fieldset
 					form.form-horizontal(method="post")
 						.form-group
-							label.col-sm-2.control-label(for='username') Notendanafn:	
-							.col-sm-10
-								input#sitename(type="text" name="username" class="username")
-						.form-group
-							label.col-sm-2.control-label(for='password') Lykilorð:
+							.col-md-2
+								label(for='sitename') Notendanafn:	
 							.col-md-10
-								input#username(type="text" name="password" class="password")
+								input(type="text" name="username" id="sitename" class="username")
 						.form-group
-							.col-sm-offset-8
+							.col-md-2
+								label(for='password') Lykilorð:
+							.col-md-10
+								input(type="text" name="password" id="password" class="password")
+						.form-group
+							.col-md-1
 								input(type="submit" class="takki" )
 		nav
 			ul
 				li.verkefnilink
 					a(href='/') Heim
 				if user
+					li.verkefnilink
+						a(href='/sida') Dæmi um síðu
 					li.verkefnilink
 						a(href='/profile') Um mig
 					li.verkefnilink
