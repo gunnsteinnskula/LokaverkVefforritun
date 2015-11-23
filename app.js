@@ -16,15 +16,7 @@ var session = require('express-session');
 var dotenv = require('dotenv').load();
 
 // Make reference to the route-handler scripts we use.
-var profile = require('./routes/profile');
-var search = require('./routes/search');
 var routes = require('./routes/index');
-var find = require('./routes/find');
-var form = require('./routes/form');
-var friends = require('./routes/friends');
-var sida = require('./routes/sida');
-var register = require('./routes/register');
-var layout = require('./routes/layout');
 // initialize express
 var app = express();
 
@@ -53,14 +45,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // tell express which script should handle which route
 app.use('/', routes);
-app.use('/form', form);
-app.use('/search',search);
-app.use('/profile', profile);
-app.use('/friends', friends);
-app.use('/sida', sida);
-app.use('/register', register);
-app.use('/find', find);
-app.use('/', layout);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
