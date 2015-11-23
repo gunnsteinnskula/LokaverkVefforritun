@@ -211,41 +211,43 @@ function getFriends(req, res) {
 
 
 
-function newSite(req, res) {
-  var renderData={
-    sitename:req.body.sitename,
-    username:req.session.user.username,
-    name:req.body.name,
-    background:req.body.background,
-    subheader:req.body.subheader,
-    pf:req.body.pf,
-    description:req.body.description
-  };
-  if(renderData.background === ''){
-    renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
+function newSite(req, res, next) {
+  if(req.body.text)
+    tagOnTheWallHandler(req,res, next)  
+  else{
+    var renderData={
+      sitename:req.body.sitename,
+      username:req.session.user.username,
+      name:req.body.name,
+      background:req.body.background,
+      subheader:req.body.subheader,
+      pf:req.body.pf,
+      description:req.body.description
+    };
+    if(renderData.background === ''){
+      renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
+    }
+    sites.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.pf, renderData.description, renderData.sitename, function (err, status) {
+      if (err) {
+        console.log(err);
+          console.error(err);
+          var villa='Þetta síðunafn hefur verið notað áður, vinsamlegast finndu annað nafn á síðuna'
+          res.render('form', {
+            renderData:renderData, 
+            vm:villa});
+      }
+
+      var success = true;
+
+      if (err || !status) {
+        success = false;
+      }
+      if(success){
+        index(req, res, next, renderData.sitename);
+      }
+      
+    });
   }
-  sites.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.pf, renderData.description, renderData.sitename, function (err, status) {
-    if (err) {
-      console.log(err);
-        console.error(err);
-        var villa='Þetta síðunafn hefur verið notað áður, vinsamlegast finndu annað nafn á síðuna'
-        res.render('form', {
-          renderData:renderData, 
-          vm:villa});
-    }
-
-    var success = true;
-
-    if (err || !status) {
-      success = false;
-    }
-    if(success){
-      res.render('sida', {renderData:renderData} );
-
-
-    }
-    
-  });
 }
 
 function getForm(req, res) {
