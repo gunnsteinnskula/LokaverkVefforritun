@@ -18,32 +18,36 @@ html
 			p #{villa}
 		form.form-horizontal(method="post")
 			.form-group
-				label.col-sm-2.control-label(for='name') Nafn:	
-				.col-sm-10
+				label.col-md-3.control-label(for='name') Nafn:	
+				.col-md-9
 					input#sitename(type="text" name="name" class="name" value=renderData.name)
 			.form-group
-				label.col-sm-2.control-label(for='username') Notendanafn:
-				.col-md-10
+				label.col-md-3.control-label(for='username') Notendanafn:
+				.col-md-9
 					input#username(type="text" name="username" class="username" value=renderData.username)
 			.form-group
-				label.col-sm-2.control-label(for='pf') Prófíl mynd:
-				.col-md-10
+				label.col-md-3.control-label(for='pf') Prófíl mynd:
+				.col-md-9
 					input#name(type="text" name="pf" class="pf" value=renderData.pf)
 			.form-group
-				label.col-sm-2.control-label(for='adresse') Heimilisfang:
-				.col-md-10
+				label.col-md-3.control-label(for='description') Texti um þig:
+				.col-md-9
+					textarea#description(type="text" rows='7' name="description" class="description" value=renderData.description) 
+			.form-group
+				label.col-md-3.control-label(for='adresse') Heimilisfang:
+				.col-md-9
 					input#background(type="text" name="adresse" class="adresse" value=renderData.home)
 			.form-group
-				label.col-sm-2.control-label(for='email') Netfang:
-				.col-md-10
+				label.col-md-3.control-label(for='email') Netfang:
+				.col-md-9
 					input#subheader(type="text" name="email" clas="email" value=renderData.email)
 			.form-group
-				label.col-sm-2.control-label(for='pn') Símanúmer:
-				.col-md-10
+				label.col-md-3.control-label(for='pn') Símanúmer:
+				.col-md-9
 					input#pf(type="text" name="pn" class="pn" value=renderData.pn)
 			.form-group
-				label.col-sm-2.control-label(for='pw') Lykilorð:
-				.col-md-10
+				label.col-md-3.control-label(for='pw') Lykilorð:
+				.col-md-9
 					input#pf(type="text" name="pw" class="pw")
 				.col-md-2
 					input(type="submit" class="takki" )
