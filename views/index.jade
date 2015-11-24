@@ -21,8 +21,13 @@ html
 				p Villa við auðkenningu
 			if user
 				h3 Þú ert skráð/ur inn sem #{user.username}
+					if reqstatus === 0
+						h3 Það eru engar vinabeiðnir eins og er.
+					if reqstatus === 1
+						h3 Þú ert með 1 vinabeiðni!
+					if reqstatus > 1
+						h3 þú ert með #{reqstatus} vinabeiðnir!
 					if requests
-						h3 Þú ert með vinabeiðni/r!
 						each u in requests
 							p(name='nafn', class='nafn', value=u.friend)
 								input(id='friendval' type='button', class="btn btn-success formButton", value='Samþykja #{u.friend}')
@@ -49,8 +54,6 @@ html
 					a(href='/') Heim
 				if user
 					li.verkefnilink
-						a(href='/sida') Dæmi um síðu
-					li.verkefnilink
 						a(href='/profile') Um mig
 					li.verkefnilink
 						a(href='/search') Leita að vinum
@@ -58,6 +61,8 @@ html
 						a(href='/find') Mínar síður
 					li.verkefnilink
 						a(href='/form') Ný síða
+					li.verkefnilink
+						a(href='/sida') Dæmi um síðu
 					li.verkefnilink
 						a(href='/friends') Vinir mínir
 					li.verkefnilink
