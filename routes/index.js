@@ -8,10 +8,7 @@ var sites = require('../lib/sites');
 var entries = require('../lib/wall');
 var users = require('../lib/users');
 
-
-//var users = require('../lib/users');
-
-/* GET home page. */
+/* Connect all pages. */
 router.get('/find', listSitesHandler);
 router.post('/find', getSiteHandler);
 router.get('/form', getForm);
@@ -66,9 +63,10 @@ function postRegister(req,res){
   email:req.body.email,
   pn:req.body.pn,
   description:req.body.description,
+  gender:req.body.gender,
   pw:req.body.pw};
   if(renderData.pw!=='')
-    users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, function (err, status) {
+    users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, renderData.gender, function (err, status) {
       if (err) {
           console.error(err);
           var vm='Þessi notandi er núþegar til, vinsamlegast finndu nýtt notendanafn';
