@@ -17,10 +17,11 @@ html
 						p Velkomin á síðuna Sunnstein
 						p Hér getur þú búið þér til þína eigin vefsíðu.
 		.wrapper
-			p #{user.gender}
 			if data
 				p Villa við auðkenningu
 			if user
+				if user.gender
+					h3 Þú ert strákur
 				h3 Þú ert skráð/ur inn sem #{user.username}
 					if reqstatus === 0
 						h3 Það eru engar vinabeiðnir eins og er.
