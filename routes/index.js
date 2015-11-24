@@ -123,16 +123,20 @@ function respond(req, res) {
 }
 
 function loggedInOrNot(req, res, next) {
-  if (req.session.user) {
-    var user=req.session.user;
-    users.listFriends(user.username, false, function (err, results){
-			var reqstatus = results.length;
-      res.render('index', {
-        user:user,
-        requests:results,
-				reqstatus:reqstatus
-      });
-    });
+	if (req.session.user) {
+		var user=req.session.user;
+		users.fu(user.username, function(err, info){
+			users.listFriends(user.username, false, function (err, results){
+				console.log(results);
+				var reqstatus = results.length;
+				res.render('index', {
+					user:user,
+					requests:results,
+					reqstatus:reqstatus,
+					gender:results[0].gender
+				});
+			});
+		});
   }
   else {
     res.render('index', {title: 'Express'});
@@ -320,7 +324,6 @@ function index(req, res, next, value) {
         entries: entryList.reverse()};
       res.render('sida', data)
       });
-
       });
     }
 
