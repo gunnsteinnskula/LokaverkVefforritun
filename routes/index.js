@@ -128,9 +128,11 @@ function loggedInOrNot(req, res, next) {
   if (req.session.user) {
     var user=req.session.user;
     users.listFriends(user.username, false, function (err, results){
+			var reqstatus = results.length;
       res.render('index', {
         user:user,
-        requests:results
+        requests:results,
+				reqstatus:reqstatus
       });
     });
   }

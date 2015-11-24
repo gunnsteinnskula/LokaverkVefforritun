@@ -15,26 +15,6 @@ input[type="submit"].takki {
 select {
   width: 70%; }
 
-/* Diamond */
-.diamond, .dia {
-  margin: 0 auto;
-  transform-origin: 50% 50%;
-  overflow: hidden;
-  width: 300px;
-  height: 300px; }
-
-.diamond {
-  transform: rotate(45deg) translateY(-25px) translateX(-25px); }
-
-.diamond .dia {
-  width: 380px;
-  height: 380px;
-  transform: rotate(-45deg); }
-
-.diamond img {
-  width: 100%;
-  height: auto; }
-
 /* SECTION */
 .flexbox {
   display: flex;
@@ -47,7 +27,7 @@ select {
 
 .test {
   width: 300px;
-  margin-top: 150px;
+  margin: -205px auto;
   text-align: center;
   display: block; }
 
@@ -55,16 +35,19 @@ select {
   width: 300px; }
 
 .middle-content {
-  width: 300px;
-  margin: -300px auto 0 auto; }
+  width: 100%;
+  margin: 0 auto; }
 
 #profpic {
   box-shadow: 0px 1px 6px 1px; }
 
 h1 {
-  color: black; }
+  color: black;
+  margin: 216px auto 0 auto;
+  text-align: center; }
 
 h2 {
+  margin-top: 80px;
   color: black;
   font-weight: bold; }
 
@@ -72,10 +55,8 @@ h2 {
   margin: 25% 0%; }
 
 @media only screen and (max-width: 767px) {
-  .test {
-    size: 10%;
-    text-align: center;
-    margin-left: -8%; }
+  h1 {
+    font-size: 40px; }
   .verkefnilink {
     margin: 6% 0% 0% 0%;
     text-align: center; } }
