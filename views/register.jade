@@ -30,6 +30,15 @@ html
 				.col-md-9
 					input#name(type="text" name="pf" class="pf" value=renderData.pf)
 			.form-group
+				label.col-md-3.control-label(for='gender') Kyn:
+				.col-md-9
+					.radio-inline
+						input#gender(type="radio" name="gender" class="gender" value=true) 
+						| Karl
+					.radio-inline
+						input#gender(type="radio" name="gender" class="gender" value=false) 
+						| Kona
+			.form-group
 				label.col-md-3.control-label(for='description') Texti um þig:
 				.col-md-9
 					textarea#description(type="text" rows='7' name="description" class="description") #{renderData.description}
