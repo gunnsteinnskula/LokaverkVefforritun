@@ -65,7 +65,7 @@ function postRegister(req,res){
   home:req.body.adresse,
   email:req.body.email,
   pn:req.body.pn,
-  description:body.description,
+  description:req.body.description,
   pw:req.body.pw};
   if(renderData.pw!=='')
     users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, function (err, status) {
@@ -181,16 +181,22 @@ function logoutHandler(req, res, next) {
   });
 }
 
+
 function postFriendsHandler(req, res, next) {
   if(req.body.friendsval){
-      sites.gef(req.body.friendsval, function (err, siteList) {
-        users.fu(req.body.friendsval, function (err, results){
-        res.render('profile', {
-        user:results,
-          sites: siteList
+    users.listFriends(req.body.friendsval, true, function (err, friendsList){
+      users.listFriends2(req.body.friendsval, true, function (err, friendsList2){
+        sites.gef(req.body.friendsval, function (err, siteList) {
+          users.fu(req.body.friendsval, function (err, results){
+            res.render('profile', {
+              user:results,
+              sites: siteList,
+              friends: friendsList.concat(friendsList2)
+            });
+          });
+        });
       });
     });
-  });
   }
   if(req.body.val)
     index(req, res, next, req.body.val);
