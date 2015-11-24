@@ -17,6 +17,9 @@ function setjumTakkana(){
 				data: {pressed: this.value},
 				success: function(data) {
 					location.reload();
+				}, 
+				error : function(err) {
+					console.error(err);
 				}
 			});
     	});

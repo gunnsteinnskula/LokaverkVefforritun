@@ -148,6 +148,7 @@ function doAction(req, res, value){
   console.log('þetta er respindið: '+ respond)
   users.respondFriend(req.session.user.username, o[1], respond, function (err, status) {
    });
+  res.send(200);
 }
 
 function loginHandler(req, res, next) {
