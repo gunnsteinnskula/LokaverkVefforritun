@@ -7,6 +7,7 @@ var router = express.Router();
 var sites = require('../lib/sites');
 var entries = require('../lib/wall');
 var users = require('../lib/users');
+var validate=require('../lib/validate');
 
 /* Connect all pages. */
 router.get('/find', listSitesHandler);
@@ -320,7 +321,13 @@ function index(req, res, next, value) {
         entries: entryList.reverse()};
       res.render('sida', data)
       });
-      });
-    }
+  });
+}
+
+function errorcheck(data){
+  
+}
+
+
 
 module.exports = router;
