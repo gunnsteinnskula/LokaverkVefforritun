@@ -21,8 +21,9 @@ html
 				p Villa við auðkenningu
 			if user
 				if user.gender
-					h3 Þú ert strákur
-				h3 Þú ert skráð/ur inn sem #{user.username}
+					h3 Þú ert skráður inn sem #{user.username}
+				else
+					h3 Þú ert skráð inn sem #{user.username}
 					if reqstatus === 0
 						h3 Það eru engar vinabeiðnir eins og er.
 					if reqstatus === 1
