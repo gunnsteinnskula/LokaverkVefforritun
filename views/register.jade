@@ -52,14 +52,115 @@ html
 					label.col-md-3.control-label(for='pn') Símanúmer:
 					.col-md-9
 						input#pn(type="text" name="pn" class="pn" value=renderData.pn)
-				.form-group(class=errors.pw)
+				.form-group
 					label.col-md-3.control-label(for='pw') Lykilorð:
 					.col-md-9
 						input#pw(type="text" name="pw" class="pw")
-				.form-group
-					.col-md-offset-3.col-md-2
-						input(type="submit" class="takki" )
-					.col-md-offset-8
+			if errors
+				if errors.name
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='name') Nafn:	
+						.col-md-9
+							input#name.form-control(type="text" name="name" class="name" value=renderData.name)
+				else
+					.form-group(class=errors.name)
+						label.col-md-3.control-label(for='name') Nafn:	
+						.col-md-9
+							input#name.form-control(type="text" name="name" class="name" value=renderData.namel)
+							span.help-block Vinsamlegast sláðu inn fullt nafn.
+				if errors.username&&errors.unique	
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='username') Notendanafn:
+						.col-md-9
+							input#username.form-control(type="text" name="username" class="username" value=renderData.username)
+				else 
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='username') Notendanafn:
+						.col-md-9
+							input#username.form-control(type="text" name="username" class="username" value=renderData.username)
+							if !errors.username
+								span.help-block Notendanafn þarf að vera að minnsta kosti 3 stafir.
+							else 
+								span.help-block Þetta notendanafn er núþegar í notkun. 
+				if errors.pf
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='pf') Prófíl mynd:
+						.col-md-9
+							input#pf.form-control(type="text" name="pf" class="pf" value=renderData.pf)
+				else
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='pf') Prófíl mynd:
+						.col-md-9
+							input#pf.form-control(type="text" name="pf" class="pf" value=renderData.pf)
+							span.help-block Vinsamlegast settu inn hlekk fyrir mynd.
+				.form-group.has-warning.had-feedback
+					label.col-md-3.control-label(for='gender') Kyn:
+					.col-md-9
+						.radio-inline
+							input#gender(type="radio" name="gender" class="gender"  value="true") 
+							| Karl
+						.radio-inline
+							input#gender(type="radio" name="gender" class="gender"  value="false") 
+							| Kona
+				if errors.description
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='description') Texti um þig:
+						.col-md-9
+							textarea#description.form-control(type="text" rows='7' name="description" class="description") #{renderData.description}
+				else
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='description') Texti um þig:
+						.col-md-9
+							textarea#description.form-control(type="text" rows='7' name="description" class="description") #{renderData.description}
+							span.help-block Textinn er ekki nægilega langur. 
+				if errors.home
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='home') Heimilisfang:
+						.col-md-9
+							input#home.form-control(type="text" name="home" class="adresse" value=renderData.home)
+				else
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='adresse') Heimilisfang:
+						.col-md-9
+							input#home.form-control(type="text" name="home" class="adresse" value=renderData.home)
+							span.help-block Vinsamlegast sláðu inn viðurkennt heimilisfang.
+				if errors.email
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='email') Netfang:
+						.col-md-9
+							input#email.form-control(type="text" name="email" clas="email" value=renderData.email)
+				else
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='email') Netfang:
+						.col-md-9
+							input#email.form-control(type="text" name="email" clas="email" value=renderData.email)
+							span.help-block Vinsamlegast sláðu inn viðurkennt netfang.
+				if errors.pn
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='pn') Símanúmer:
+						.col-md-9
+							input#pn.form-control(type="text" name="pn" class="pn" value=renderData.pn)
+				else
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='pn') Símanúmer:
+						.col-md-9
+							input#pn.form-control(type="text" name="pn" class="pn" value=renderData.pn)
+							span.help-block Vinsamlegast sláðu inn að minnsta kosti 7 tölustafa símanumer. 
+				if errors.pw
+					.form-group.has-success.had-feedback
+						label.col-md-3.control-label(for='pw') Lykilorð:
+						.col-md-9
+							input#pw.form-control(type="text" name="pw" class="pw")
+				else
+					.form-group.has-error.had-feedback
+						label.col-md-3.control-label(for='pw') Lykilorð:
+						.col-md-9
+							input#pw.form-control(type="text" name="pw" class="pw")
+							span.help-block Lykilorðið þarf að vera að minnsta kosti 5 stafir.
+			.form-group
+				.col-md-offset-3.col-md-2
+					input(type="submit" class="takki" )
+				.col-md-offset-8
 	nav
 		ul
 			li.verkefnilink
