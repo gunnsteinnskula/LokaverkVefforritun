@@ -67,18 +67,21 @@ function postRegister(req,res){
 		gender:req.body.gender,
 		pw:req.body.pw};
 
-		var errors = errorCheck(req.body);
-		var errorLog = (errors.username&&errors.name&&errors.pf&&errors.home&&errors.email&&errors.pn&&errors.description&&errors.pw);
+	var errors = errorCheck(req.body);
+	var errorLog = (errors.username&&errors.name&&errors.pf&&errors.home&&errors.email&&errors.pn&&errors.description&&errors.pw);
 	if(errorLog)
 		users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, renderData.gender, function (err, status) {
 			var success = true;
 			if (err) {
 				errors.unique = false;
 				console.error(err);
-					}
-				
-				console.log(errors.unique + 'errors.unique dæmið ===========================================');
-				console.log(errors.name + 'Error.name dæmið =============================================');
+				res.render('register', {
+					renderData:renderData,
+					errors:errors
+				});
+			}
+
+
 
 			if (err || !errorLog) {
 				success = false;
@@ -87,11 +90,11 @@ function postRegister(req,res){
 				res.redirect('/');
 
 		});
-	else {
-		res.render('register', {
-			renderData:renderData,
-			errors:errors
-		});
+	else{
+	res.render('register', {
+		renderData:renderData,
+		errors:errors
+	});
 	}
 }
 

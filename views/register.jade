@@ -69,7 +69,7 @@ html
 						.col-md-9
 							input#name.form-control(type="text" name="name" class="name" value=renderData.namel)
 							span.help-block Vinsamlegast sláðu inn fullt nafn.
-				if errors.name&&errors.unique	
+				if errors.username&&errors.unique	
 					.form-group.has-success.had-feedback
 						label.col-md-3.control-label(for='username') Notendanafn:
 						.col-md-9
@@ -79,9 +79,9 @@ html
 						label.col-md-3.control-label(for='username') Notendanafn:
 						.col-md-9
 							input#username.form-control(type="text" name="username" class="username" value=renderData.username)
-							if !errors.name
+							if !errors.username
 								span.help-block Notendanafn þarf að vera að minnsta kosti 3 stafir.
-							if !errors.unique
+							else 
 								span.help-block Þetta notendanafn er núþegar í notkun. 
 				if errors.pf
 					.form-group.has-success.had-feedback
