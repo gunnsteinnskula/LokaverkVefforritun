@@ -109,7 +109,8 @@ function errorCheck(data){
 		pn:validate.phoneNumber(data.pn),
 		description:validate.length(data.description,10),
 		pw:validate.length(data.pw,5),
-		unique:'.has-success had-feedback'
+		gender: '.has-warning had-feedback'
+		unique:'has-success had-feedback'
 	};
 	return errors;
 }
