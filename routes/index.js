@@ -66,9 +66,9 @@ function postRegister(req,res){
 		description:req.body.description,
 		gender:req.body.gender,
 		pw:req.body.pw};
-
+		var tester = 'has-success had feed-back'
 	var errors = errorCheck(req.body);
-	var errorLog = (errors.username&&errors.name&&errors.pf&&errors.home&&errors.email&&errors.pn&&errors.description&&errors.pw);
+	var errorLog = (errors.username===tester&&errors.name===tester&&errors.pf===tester&&errors.home===tester&&errors.email===tester&&errors.pn===tester&&errors.description===tester&&errors.pw===tester);
 	if(errorLog)
 		users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, renderData.gender, function (err, status) {
 			var success = true;
@@ -129,7 +129,8 @@ function getRegister(req, res) {
 		pw:'',
 		unique:''
 	};
-	res.render('register', { renderData:renderData });
+	res.render('register', { renderData:renderData,
+		errors: errors});
 }
 
 function getProfile(req, res) {
