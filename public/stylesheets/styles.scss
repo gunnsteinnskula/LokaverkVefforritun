@@ -181,6 +181,18 @@ ul{ list-style-type: none; }
 .socials a  img { opacity: 0.4; }
 
 .socials a img:hover { opacity: 1; }
+/* REGISTER FIX */
+
+.form-control{
+	border-radius: 0;
+}
+.input-group {
+	width: 70.8%;
+}
+.help-block {
+	font-size: 15px;
+	margin-bottom: -10px;
+}
 
 /* SCALING */
 @media only screen and (max-width: 1199px){
