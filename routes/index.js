@@ -73,7 +73,7 @@ function postRegister(req,res){
 		users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, renderData.gender, function (err, status) {
 			var success = true;
 			if (err) {
-				errors.unique = false;
+				errors.unique = 'has-error had-feedback';
 				console.error(err);
 				res.render('register', {
 					renderData:renderData,
@@ -109,7 +109,7 @@ function errorCheck(data){
 		pn:validate.phoneNumber(data.pn),
 		description:validate.length(data.description,10),
 		pw:validate.length(data.pw,5),
-		unique:true
+		unique:'.has-success had-feedback'
 	};
 	return errors;
 }
@@ -118,6 +118,17 @@ function errorCheck(data){
 
 function getRegister(req, res) {
 	var renderData={};
+	var errors={
+		username:'',
+		name:'',
+		pf:'',
+		home:'',
+		email:'',
+		pn:'',
+		description:'',
+		pw:'',
+		unique:''
+	};
 	res.render('register', { renderData:renderData });
 }
 
