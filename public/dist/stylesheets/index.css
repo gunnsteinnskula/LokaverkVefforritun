@@ -18,11 +18,12 @@ nav {
   width: 165px;
   background-color: rgba(0, 0, 0, 0.8);
   top: 0px;
-  bottom: 0%;
+  bottom: -10%;
   position: fixed; }
 
-ul {
-  list-style-type: none; }
+.ul {
+  width: 100%;
+  margin: 0 auto; }
 
 nav a {
   color: #ffffff;
@@ -41,17 +42,21 @@ nav a:hover {
 .verkefnilink {
   margin: 34% 0%; }
 
+.heimlink {
+  margin: 8% 0% 0% 11%; }
+
 @media (max-width: 768px) {
   nav {
     position: relative;
     width: 100%;
-    padding: 4% 0%;
+    padding: 4% 0% 11% 0%;
     height: 100%;
-    margin-top: 5%; }
+    margin: 0% 0%; }
   .verkefnilink {
     text-align: center;
     margin: 9% 0% 0% 0%; }
   .heimlink {
+    margin: 8% 0% 0% 0%;
     text-align: center; }
   nav a {
     color: #ffffff;
