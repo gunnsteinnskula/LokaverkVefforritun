@@ -112,7 +112,7 @@ function errorCheck(data){
 		pn:validate.phoneNumber(data.pn),
 		description:validate.length(data.description,10),
 		pw:validate.length(data.pw,5),
-		gender: '.has-warning had-feedback'
+		gender: '.has-warning had-feedback',
 		unique:'has-success had-feedback'
 	};
 	return errors;
@@ -131,7 +131,7 @@ function getRegister(req, res) {
 		pn:'',
 		description:'',
 		pw:'',
-		unique:''
+		unique: ''
 	};
 	res.render('register', { renderData:renderData,
 		errors: errors});
