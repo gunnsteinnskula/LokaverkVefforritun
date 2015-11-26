@@ -66,14 +66,17 @@ function postRegister(req,res){
 		description:req.body.description,
 		gender:req.body.gender,
 		pw:req.body.pw};
-		var tester = 'has-success had feed-back'
+		var tester = 'has-success had-feedback'
 	var errors = errorCheck(req.body);
 	var errorLog = (errors.username===tester&&errors.name===tester&&errors.pf===tester&&errors.home===tester&&errors.email===tester&&errors.pn===tester&&errors.description===tester&&errors.pw===tester);
+	console.log(errorLog);
 	if(errorLog)
 		users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, renderData.gender, function (err, status) {
 			var success = true;
+				console.log(errors.unique + 'errors.unique 22222222222222222222222222222111=');
 			if (err) {
 				errors.unique = 'has-error had-feedback';
+				console.log(errors.unique + 'errors.unique 11111111111111111111111111111111=');
 				console.error(err);
 				res.render('register', {
 					renderData:renderData,
