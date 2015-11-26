@@ -78,6 +78,12 @@ h2 {
 	margin-top: 5%;
 	margin-left: 22%;
 }
+
+li {
+	text-align: center;
+	display: block;
+	margin: 7% 0% 0% 0%;
+}
 /* FORM CONTROLL */
 
 input[type="text"] {
@@ -158,7 +164,7 @@ ul{ list-style-type: none; }
 	border-bottom: 3px solid #f1f1f1;
 }
 
-.heimlink{ margin: 34% 0% 0%;}
+.heimlink{ margin: 8% 0% 0% 4%;}
 
 .verkefnilink{ margin: 34% 0% 34% 0%;}
 
@@ -192,6 +198,18 @@ ul{ list-style-type: none; }
 .help-block {
 	font-size: 15px;
 	margin-bottom: -10px;
+}
+.sunn {
+	width: 100%;
+	margin: 0 auto;
+}
+.steinn {
+ margin: 0 auto;
+ text-align: center;
+ display: block;
+}
+#sunnsteinn {
+	width:100%;
 }
 
 /* SCALING */
@@ -232,6 +250,9 @@ ul{ list-style-type: none; }
 		margin-top: 5%;
 		margin-left: 12%;
 	}
+#sunnsteinn {
+	width: 40%;
+}
 	header {
 		padding: 5% 0% 5%;
 		text-shadow: 0 2px 2px rgba(0,0,0,0.5);
@@ -239,6 +260,11 @@ ul{ list-style-type: none; }
 		height: 300px;
 	}
 	
+li {
+	text-align: center;
+	display: block;
+	margin: 7% 0% 0% 0%;
+}
 
 }
 

@@ -68,6 +68,11 @@ h2 {
   margin-top: 5%;
   margin-left: 22%; }
 
+li {
+  text-align: center;
+  display: block;
+  margin: 7% 0% 0% 0%; }
+
 /* FORM CONTROLL */
 input[type="text"] {
   width: 70.8%; }
@@ -138,7 +143,7 @@ ul {
   border-bottom: 3px solid #f1f1f1; }
 
 .heimlink {
-  margin: 34% 0% 0%; }
+  margin: 8% 0% 0% 4%; }
 
 .verkefnilink {
   margin: 34% 0% 34% 0%; }
@@ -176,6 +181,18 @@ ul {
   font-size: 15px;
   margin-bottom: -10px; }
 
+.sunn {
+  width: 100%;
+  margin: 0 auto; }
+
+.steinn {
+  margin: 0 auto;
+  text-align: center;
+  display: block; }
+
+#sunnsteinn {
+  width: 100%; }
+
 /* SCALING */
 @media only screen and (max-width: 1199px) {
   html {
@@ -201,8 +218,14 @@ ul {
   .wrapper {
     margin-top: 5%;
     margin-left: 12%; }
+  #sunnsteinn {
+    width: 40%; }
   header {
     padding: 5% 0% 5%;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     margin-left: 12%;
-    height: 300px; } }
+    height: 300px; }
+  li {
+    text-align: center;
+    display: block;
+    margin: 7% 0% 0% 0%; } }
