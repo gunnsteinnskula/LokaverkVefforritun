@@ -4,7 +4,7 @@ block content
 	head
 		link(rel='stylesheet', href='dist/stylesheets/find.css')
 	body
-		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
+		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)' alt="Bakgrunnsmynd af litríku polygonal mynstri")
 			header
 				h1 Mínar síður
 				h2 Hér er listi af síðunum sem ég hef búið til!
@@ -12,8 +12,8 @@ block content
 			h3 Mínar Síður
 				if sites
 					form(method="post")
-						select(class="menu" name="val")
+						select(class="menu" name="select")
 							each u in sites
-								option(value=u.sitename class="option") #{u.sitename}
-							input(type="submit" class="takki")
+								option(value=u.sitename class="option" name=u.sitename) #{u.sitename}
+							input(type="submit" class="takki" name="submit button")
 

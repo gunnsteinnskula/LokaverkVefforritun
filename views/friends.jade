@@ -12,8 +12,8 @@ block content
 			if friends
 				h3 Velja vin
 				form(method="post")
-					select(class="menu" name="friendsval")
+					select(class="menu" name="friendselect")
 						each u in friends
-							option(value=u.friend ) #{u.friend}
-						input(type="submit" class="takki" )
+							option(value=u.friend name=u.friend) #{u.friend}
+						input(type="submit" class="takki" name="Submit button" )
 

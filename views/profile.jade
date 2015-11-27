@@ -9,7 +9,10 @@ block content
 		.wrapper
 			.middle-content
 				.test
-					img.img-circle(src=user.purl, id='profpic', alt='Mynd af mér, samt ekki')
+					if user.purl
+						img.img-circle(src=user.purl, id='profpic', alt='Profile Picture')
+					else
+						img.img-circle(src=user.purl, id='profpic', alt='Profile Picture Missing')
 				h1 #{user.name}
 			.bottom-content
 				section.review-section
@@ -36,6 +39,6 @@ block content
 									form(method="post")
 										select(class="menu" name="val")
 											each u in sites
-												option(value=u.sitename class="option") #{u.sitename}
-											input(type="submit" class="takki")
+												option(value=u.sitename class="option" name=u.sitename) #{u.sitename}
+											input(type="submit" class="takki" name="Submit button")
 				

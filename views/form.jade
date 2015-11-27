@@ -4,14 +4,14 @@ block content
 	head
 		link(rel='stylesheet', href='dist/stylesheets/form.css')
 	body
-		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
+		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)' alt="Bakgrunnsmynd af litríku polygonal mynstri")
 			header
 				h1 Ný Síða
 				h2 Hér getur þú sett upp þína eigin vefsíðu!
 	.wrapper
 		if vm
 			p #{vm}
-		form.form-horizontal(method="post")
+		form.form-horizontal(method="post" name="Register form")
 			.form-group
 				label.col-md-3(for='sitename') Nafn Síðu:	
 				.col-md-9
@@ -38,4 +38,4 @@ block content
 					input#background(type="text" placeholder="imgur.com/mynd.jpg" name="background" class="background" value=renderData.background)
 			.form-group
 				.col-md-3
-					input(type="submit" class="takki" )
+					input(type="submit" class="takki" name="Submit button" )

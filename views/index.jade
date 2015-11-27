@@ -10,7 +10,7 @@ html
 		link(rel='stylesheet', href='dist/stylesheets/styles.css')
 		link(rel='stylesheet', href='dist/stylesheets/index.css')
 		body
-			main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
+			main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)' alt="Bakgrunnsmynd af litríku polygonal mynstri")
 				header
 					h1 Sunnsteinn 
 					h2
@@ -33,8 +33,8 @@ html
 					if requests
 						each u in requests
 							p(name='nafn', class='nafn', value=u.friend)
-								input(id='friendval' type='button', class="btn btn-success formButton", value='Samþykja #{u.friend}')
-								input(id='friendval' type='button', class="btn btn-danger formButton", value='Hunsa #{u.friend}')
+								input(id='friendval' type='button', class="btn btn-success formButton", value='Samþykja #{u.friend}' name="Accept button")
+								input(id='friendval' type='button', class="btn btn-danger formButton", value='Hunsa #{u.friend}' name="Accept button")
 			else 
 				fieldset
 					form.form-horizontal(method="post")
@@ -50,11 +50,11 @@ html
 								input(type="password" name="password" id="password" class="password")
 						.form-group
 							.col-md-1
-								input(type="submit" class="takki" )
+								input(type="submit" class="takki" name="Submit Button" )
 		nav
 			.sunn
 				.steinn
-					img#sunnsteinn(src="http://i.imgur.com/t4Fgcb8.png")
+					img#sunnsteinn(src="http://i.imgur.com/t4Fgcb8.png" alt="Logo sem mynd af SunnSteini")
 			.ul
 				li.heimlink
 					a(href='/') Heim
