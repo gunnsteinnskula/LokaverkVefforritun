@@ -27,7 +27,9 @@ nav a {
   margin: 0 0 0 -15%; }
 
 nav a:hover {
-  border-bottom: 3px solid #ffffff; }
+  color: white;
+  border-bottom: 3px solid #ffffff;
+  text-decoration: none; }
 
 .home {
   border-bottom: 3px solid #f1f1f1; }
@@ -36,7 +38,7 @@ nav a:hover {
   margin: 34% 0%; }
 
 .heimlink {
-  margin: 8% 0% 0% 11%; }
+  margin: 8% 0% 0% 4%; }
 
 @media (max-width: 768px) {
   .heimlink {

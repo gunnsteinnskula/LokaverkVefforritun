@@ -42,12 +42,6 @@ h1 {
 h2 {
   color: white; }
 
-.sub {
-  font-size: 48px;
-  line-height: 72px;
-  font-weight: bold;
-  color: white; }
-
 .verkefni {
   margin-bottom: 3%; }
 
@@ -55,14 +49,6 @@ h2 {
   text-decoration: none;
   color: #f1f1f1;
   border-bottom: 5px solid #1f1f1f; }
-
-.link:visited {
-  color: black;
-  border-color: white; }
-
-.link:hover {
-  color: #1f1f1f;
-  border-bottom: 5px solid #f1f1f1; }
 
 .wrapper {
   margin-top: 5%;
@@ -75,14 +61,19 @@ li {
 
 /* FORM CONTROLL */
 input[type="text"] {
-  width: 70.8%; }
+  width: 70.8%;
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+input[type="password"] {
+  width: 70.8%;
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+input[type="submit"] {
+  margin-top: 30px; }
 
 textarea[type="text"] {
   width: 70.8%;
   resize: none; }
-
-input[type="submit"] {
-  margin-top: 30px; }
 
 /* SECTION */
 .flexbox {
@@ -93,21 +84,6 @@ input[type="submit"] {
 .flex {
   flex: 1;
   flex-basis: calc(765px/2); }
-
-.flex p {
-  margin-top: 1%; }
-
-.strandarpic {
-  flex: 1;
-  max-width: 98%; }
-
-.comment {
-  font: italic 48px/60px 'Bree Serif';
-  margin-top: 20px; }
-
-.review {
-  font-family: 'Bree Serif';
-  font-size: 24px; }
 
 .half1 {
   width: 46%;
@@ -143,32 +119,7 @@ ul {
   border-bottom: 3px solid #f1f1f1; }
 
 .heimlink {
-  margin: 8% 0% 0% 4%; }
-
-.verkefnilink {
-  margin: 34% 0% 34% 0%; }
-
-/* FOOTER */
-.site-footer {
-  padding: 20px; }
-
-.socials {
-  display: flex;
-  justify-content: center;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  margin: 0 0  0 45%;
-  font-size: 0; }
-
-.socials a:not(:first-of-type) {
-  padding-left: 33px; }
-
-.socials a img {
-  opacity: 0.4; }
-
-.socials a img:hover {
-  opacity: 1; }
+  margin: 8% 0% 0% 11%; }
 
 /* REGISTER FIX */
 .form-control {
@@ -193,38 +144,19 @@ ul {
 #sunnsteinn {
   width: 100%; }
 
-/* SCALING */
-@media only screen and (max-width: 1199px) {
-  html {
-    margin: 0 0 0 0; }
-  h1 {
-    font-variant: small-caps;
-    line-height: 55px;
-    font-variant: small-caps;
-    text-transform: uppercase;
-    font-size: 55px;
-    margin: 0 5% 0 0; }
-  .half2 {
-    background-size: cover;
-    width: 100%;
-    margin: 1% 0%; }
-  .half1 {
-    background-size: cover;
-    width: 100%;
-    margin: 1% 0%;
-    padding-bottom: 97%; } }
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .wrapper {
     margin-top: 5%;
     margin-left: 12%; }
   #sunnsteinn {
-    width: 40%; }
+    width: 20%; }
   header {
     padding: 5% 0% 5%;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     margin-left: 12%;
     height: 300px; }
+  .heimlink {
+    margin: 4% 0% 0% 0%; }
   li {
     text-align: center;
     display: block;

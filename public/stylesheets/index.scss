@@ -20,14 +20,11 @@ nav {
 	width: 165px;
 	background-color: rgba(0, 0, 0, 0.8);
 	top: 0px;
-	bottom: -10%;
+	bottom: 0%;
 	position: fixed;
 }
 
-.ul{ 
-	width: 100%;
-	margin: 0 auto;
-}
+ul{ list-style-type: none; }
 
 nav a {
 	color: #ffffff;
@@ -38,11 +35,11 @@ nav a {
 	margin: 0 0 0 -15%;
 }
 
-nav a:hover { border-bottom: 3px solid #ffffff; }
-
-.home{
-	border-bottom: 3px solid #f1f1f1;
-}
+nav a:hover { 
+color: white;
+border-bottom: 3px solid #ffffff;
+text-decoration: none;
+ }
 
 .verkefnilink{ margin: 34% 0%;}
 
@@ -55,14 +52,14 @@ nav a:hover { border-bottom: 3px solid #ffffff; }
 		width: 100%;
 		padding: 4% 0% 11% 0%;
 		height: 100%;
-		margin: 0% 0%;
+		margin: 5% 0% 0% 0%;
 	}
 	.verkefnilink{ 
 		text-align: center;
 		margin: 9% 0% 0% 0%;
 	}
 	.heimlink {
-		margin: 8% 0% 0% 0%;
+		margin: 5% 0% 0% 0%;
 	text-align: center;
 	}
 	
