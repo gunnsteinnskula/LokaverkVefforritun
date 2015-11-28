@@ -1,6 +1,8 @@
 'use strict';
 
+
 var gulp = require('gulp');
+var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon');
 var browserSync = require('browser-sync').create();
@@ -75,10 +77,11 @@ gulp.task('serve', function() {
 
 gulp.task('inspect', function () {
   return gulp.src(['./*.js',
-  './**/*.js', '!lib/pass.js', '!node_modules/**/*.js'])
+  './**/*.js', '!lib/pass.js',
+   '!public/bower_components/**/*.js', 
+   '!node_modules/**/*.js'])
     .pipe(jshint())
-    .pipe(jshint.reporter(stylish))
-    .pipe(jshint.reporter('fail'));
+    .pipe(jshint.reporter('default'));
 });
 
 // set production enviroment, then do default tasks.

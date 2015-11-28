@@ -15,7 +15,7 @@ function setjumTakkana(){
 				url: '/respondfriend',
 				type: 'POST',
 				data: {pressed: this.value},
-				success: function(data) {
+				success: function() {
 					location.reload();
 				}, 
 				error : function(err) {

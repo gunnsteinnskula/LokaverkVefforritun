@@ -12,8 +12,6 @@ var cookieParser = require('cookie-parser');
 // exposes the req.body object for easy access to request parameters in routes.
 var bodyParser = require('body-parser');
 var session = require('express-session');
-// dotenv
-var dotenv = require('dotenv').load();
 
 // Make reference to the route-handler scripts we use.
 var routes = require('./routes/index');

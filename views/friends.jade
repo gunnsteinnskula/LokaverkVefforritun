@@ -9,11 +9,13 @@ block content
 				h1 Vinirnir mínir
 				h2 Hér er listi af vinum mínum!
 		.wrapper
-			if friends
+			if friendsval>0
 				h3 Velja vin
 				form(method="post")
 					select(class="menu" name="friendselect")
 						each u in friends
 							option(value=u.friend name=u.friend) #{u.friend}
 						input(type="submit" class="takki" name="Submit button" )
-
+			else
+				h3 Þú ert ekki með neina vini
+				p Farðu í Leita af vinum til að bæta við nýjum vinum

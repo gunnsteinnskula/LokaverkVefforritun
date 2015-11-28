@@ -30,8 +30,8 @@ router.get('/sida', getExample);
 router.post('/sida', getExample);
 
 
-function getExample(req, res, next){
-	index(req, res, next, 'example');
+function getExample(req, res){
+	index(req, res, 'example');
 }
 
 function postSearch(req, res) {
@@ -45,10 +45,11 @@ function postSearch(req, res) {
 		if (err || !status) {
 			success = false;
 		}
-		if(success)
-			err='Vini hefur verið bætt við, nú er bara að bíða eftir að hann svari'
-
-				return res.render('search', { title: 'Create user', post: true, success: success, respond:err })
+		if(success){
+			err='Vini hefur verið bætt við, nú er bara að bíða eftir að hann svari';
+			return res.render('search', { title: 'Create user', 
+				post: true, success: success, respond:err });
+		}
 	});
 }
 
@@ -67,43 +68,37 @@ function postRegister(req,res){
 		description:req.body.description,
 		gender:req.body.gender,
 		pw:req.body.pw};
-		var tester = 'has-success had-feedback'
+		var tester = 'has-success had-feedback';
 	var errors = errorCheck(req.body);
 	var errorLog = (errors.username===tester&&errors.name===tester&&errors.pf===tester&&errors.home===tester&&errors.email===tester&&errors.pn===tester&&errors.description===tester&&errors.pw===tester);
-	console.log(errorLog);
-	if(errorLog)
+	if(errorLog){
 		users.createUser(renderData.username, renderData.name, renderData.pw, renderData.pf, renderData.home, renderData.email, renderData.pn, renderData.description, renderData.gender, function (err, status) {
 			var success = true;
-				console.log(errors.unique + 'errors.unique 22222222222222222222222222222111=');
 			if (err) {
 				errors.unique = 'has-error had-feedback';
-				console.log(errors.unique + 'errors.unique 11111111111111111111111111111111=');
 				console.error(err);
 				res.render('register', {
 					renderData:renderData,
 					errors:errors
 				});
 			}
-
-
-
 			if (err || !errorLog) {
 				success = false;
 			}
-			if(success)
+			if(success){
 				res.redirect('/');
-
+			}
 		});
+	}
 	else{
-	res.render('register', {
-		renderData:renderData,
-		errors:errors
-	});
+		res.render('register', {
+			renderData:renderData,
+			errors:errors
+		});
 	}
 }
 
 function errorCheck(data){
-	console.log(data.pf);
 	var errors={
 		username:validate.length(data.username,3),
 		name:validate.length(data.name,3),
@@ -118,7 +113,6 @@ function errorCheck(data){
 	};
 	return errors;
 }
-
 
 
 function getRegister(req, res) {
@@ -158,7 +152,7 @@ function respond(req, res) {
 	doAction(req, res, whatUserSent);
 }
 
-function loggedInOrNot(req, res, next) {
+function loggedInOrNot(req, res) {
 	if (req.session.user) {
 		var user=req.session.user;
 		users.listFriends(user.username, false, function (err, results){
@@ -178,16 +172,18 @@ function loggedInOrNot(req, res, next) {
 function doAction(req, res, value){
 	var o = value.split(" ");
 	var respond;
-	if(o[0]==='Samþykja')
+	if(o[0]==='Samþykja'){
 		respond=true;
-	else respond=false;
-	console.log('þetta er respindið: '+ respond)
-		users.respondFriend(req.session.user.username, o[1], respond, function (err, status) {
-		});
+	}
+	else{
+		respond=false;
+	}
+	users.respondFriend(req.session.user.username, o[1], respond, function (err, status) {
+	});
 	res.send(200);
 }
 
-function loginHandler(req, res, next) {
+function loginHandler(req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
 	users.auth(username, password, function (err, user) {
@@ -209,7 +205,7 @@ function loginHandler(req, res, next) {
 }
 
 
-function logoutHandler(req, res, next) {
+function logoutHandler(req, res) {
 	// eyðir session og öllum gögnum, verður til nýtt við næsta request
 	req.session.destroy(function(){
 		res.redirect('/');
@@ -217,7 +213,7 @@ function logoutHandler(req, res, next) {
 }
 
 
-function postFriendsHandler(req, res, next) {
+function postFriendsHandler(req, res) {
 	if(req.body.friendsval){
 		users.listFriends(req.body.friendsval, true, function (err, friendsList){
 			users.listFriends2(req.body.friendsval, true, function (err, friendsList2){
@@ -233,18 +229,22 @@ function postFriendsHandler(req, res, next) {
 			});
 		});
 	}
-	if(req.body.val)
-		index(req, res, next, req.body.val);
+	if(req.body.val){
+		index(req, res, req.body.val);
+	}
 
 	if(req.body.text){
-		tagOnTheWallHandler(req,res, next)  
+		tagOnTheWallHandler(req,res);
 	}
 }
 function getFriends(req, res) {
 	users.listFriends(req.session.user.username, true, function (err, userList) {
 		users.listFriends2(req.session.user.username, true, function (err, userList2) {
+			userList = userList.concat(userList2);
+			var friendsval = userList.length;
 			res.render('friends', {
-				friends: userList.concat(userList2)
+				friendsval:friendsval,
+				friends: userList
 			});
 		});
 	});
@@ -252,9 +252,10 @@ function getFriends(req, res) {
 
 
 
-function newSite(req, res, next) {
-	if(req.body.text)
-		tagOnTheWallHandler(req,res, next)  
+function newSite(req, res) {
+	if(req.body.text){
+		tagOnTheWallHandler(req,res);
+	}
 	else{
 		var renderData={
 			sitename:req.body.sitename,
@@ -266,13 +267,13 @@ function newSite(req, res, next) {
 			description:req.body.description
 		};
 		if(renderData.background === ''){
-			renderData.background = 'http://i.imgur.com/ZXDrw5D.gif'
+			renderData.background = 'http://i.imgur.com/ZXDrw5D.gif';
 		}
 		sites.createSite(renderData.username, renderData.name, renderData.background, renderData.subheader, renderData.pf, renderData.description, renderData.sitename, function (err, status) {
 			if (err) {
 				console.log(err);
 				console.error(err);
-				var villa='Þetta síðunafn hefur verið notað áður, vinsamlegast finndu annað nafn á síðuna'
+				var villa='Þetta síðunafn hefur verið notað áður, vinsamlegast finndu annað nafn á síðuna';
 					res.render('form', {
 						renderData:renderData, 
 						vm:villa});
@@ -284,7 +285,7 @@ function newSite(req, res, next) {
 				success = false;
 			}
 			if(success){
-				index(req, res, next, renderData.sitename);
+				index(req, res, renderData.sitename);
 			}
 
 		});
@@ -307,16 +308,16 @@ function listSitesHandler(req, res) {
 	});
 }
 
-function getSiteHandler(req, res,next) {
+function getSiteHandler(req, res) {
 	if(req.body.val){
-		index(req, res, next, req.body.val);
+		index(req, res, req.body.val);
 	}
 	if(req.body.text){
-		tagOnTheWallHandler(req,res,next) 
+		tagOnTheWallHandler(req,res);
 	}
 }
 
-function tagOnTheWallHandler(req, res, next){
+function tagOnTheWallHandler(req, res){
 	console.log(req.body.text + req.body.sitename);
 	var text = req.body.text;
 	var sitename=req.body.sitename;
@@ -325,20 +326,17 @@ function tagOnTheWallHandler(req, res, next){
 		if (err) {
 			console.error(err);
 		}
-
 		var success = true;
-
 		if (err || !status) {
 			success = false;
 		}
-		index(req, res, next, req.body.sitename);
+		index(req, res, req.body.sitename);
 	});
 }
 
-function index(req, res, next, value) {
-	var user = req.session.user;
+function index(req, res, value) {
 	entries.listWriting(value, function (err, entryList) {
-		entryList.forEach(function(e,i,a) {
+		entryList.forEach(function(e) {
 			var time = moment(e.date).format('LLL');
 			e.date = time;
 		});
@@ -354,7 +352,7 @@ function index(req, res, next, value) {
 			var data={
 				renderData:renderData,
 				entries: entryList.reverse()};
-			res.render('sida', data)
+			res.render('sida', data);
 		});
 	});
 }
