@@ -43,7 +43,10 @@ function postSearch(req, res) {
 		var success = true;
 
 		if (err || !status) {
+			err= 'Þessi notandi er því miður ekki til';
 			success = false;
+			return res.render('search', { title: 'Create user', 
+				post: true, success: success, respond:err });
 		}
 		if(success){
 			err='Vini hefur verið bætt við, nú er bara að bíða eftir að hann svari';
