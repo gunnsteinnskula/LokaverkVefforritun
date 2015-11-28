@@ -12,7 +12,7 @@ block content
 			if friendsval>0
 				h3 Velja vin
 				form(method="post")
-					select(class="menu" name="friendselect")
+					select(class="menu" name="friendsval")
 						each u in friends
 							option(value=u.friend name=u.friend) #{u.friend}
 						input(type="submit" class="takki" name="Submit button" )

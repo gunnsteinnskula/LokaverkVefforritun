@@ -38,7 +38,7 @@ html
 				.form-group(class=errors.pf)
 					label.col-md-3.control-label(for='pf') Prófíl mynd:
 					.col-md-9
-						input#pf.form-control(type="text" name="pf" class="pf" value=renderData.pf)
+						input#pf.form-control(type="text" name="pf" class="pf" placeholder="http://imgur.com/mynd.jpg" value=renderData.pf)
 						if errors.pf == 'has-error had-feedback'
 							span.help-block Vinsamlegast settu inn löggildan hlekk fyrir mynd.
 				.form-group(class=errors.gender)
@@ -55,7 +55,7 @@ html
 					.col-md-9
 						textarea#description.form-control(type="text" rows='7' name="description" class="description") #{renderData.description}
 						if errors.description == 'has-error had-feedback'
-							span.help-block Vinsamlegast sláðu inn fullt nafn.
+							span.help-block Vinsamlegast sláðu inn lengri texta.
 				.form-group(class=errors.home)
 					label.col-md-3.control-label(for='adresse') Heimilisfang:
 					.col-md-9
