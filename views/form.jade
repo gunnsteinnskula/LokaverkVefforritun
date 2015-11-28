@@ -4,14 +4,14 @@ block content
 	head
 		link(rel='stylesheet', href='dist/stylesheets/form.css')
 	body
-		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)' alt="Bakgrunnsmynd af litríku polygonal mynstri")
+		main.top-content(style='background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg)')
 			header
 				h1 Ný Síða
 				h2 Hér getur þú sett upp þína eigin vefsíðu!
 	.wrapper
 		if vm
 			p #{vm}
-		form.form-horizontal(method="post" name="Register form")
+		form.form-horizontal(method="post")
 			.form-group
 				label.col-md-3(for='sitename') Nafn síðu:	
 				.col-md-9
@@ -31,11 +31,11 @@ block content
 			.form-group
 				label.col-md-3(for='pf') Mynd við fyrirsögn:
 				.col-md-9
-					input#pf(type="text" name="pf" placeholder="http://imgur.com/mynd.jpg" class="pf" value=renderData.pf)
+					input#pf(type="text" name="pf" placeholder="imgur.com/mynd.jpg" class="pf" value=renderData.pf)
 			.form-group
 				label.col-md-3(for='background') Bakgrunnsmynd:
 				.col-md-9
-					input#background(type="text" placeholder="http://imgur.com/mynd.jpg" name="background" class="background" value=renderData.background)
+					input#background(type="text" placeholder="imgur.com/mynd.jpg" name="background" class="background" value=renderData.background)
 			.form-group
 				.col-md-3
-					input(type="submit" class="takki" name="Submit button" )
+					input(type="submit" class="takki" )
