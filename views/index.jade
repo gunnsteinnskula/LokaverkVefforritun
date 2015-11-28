@@ -17,6 +17,8 @@ html
 						p Velkomin á síðuna Sunnstein
 						p Hér getur þú búið þér til þína eigin vefsíðu.
 		.wrapper
+			if !user
+				p Vinsamlegast skráðu þig inn eða nýskráðu.
 			if data
 				p Villa við auðkenningu
 			if user
