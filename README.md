@@ -1,1 +1,21 @@
-# VefforitunS
+# Lokaverkefni VefforitunS
+
+## Markmið
+
+
+Upprunarleg hugmynd var að búa til vefsíðu þar sem notandinn getur búið til sínar eigin heimasíðu. Sett var upp verklýsing þar sem ákveðið var að Gunnsteinn hefði aðalumsjón með útlitinu og framendavirkninni og Sunna hefði umsjón með bakendavirkninni. Ákveðið var að læra á github og nota það til að deila vinnu á milli notenda. Þegar byrjað var að kóða var ekki nógu mikil þekking til staðar um hvernig framendinn og bakendinn töluðu sín á milli svo fyrsta skref var að afla sér þeirri þekkingu. Þegar sú þekking var til staðar kom í ljós að það væri ofur einfallt að framkvæma það sem var búið að ákveða. Því var tekið uppá því að bæta við virknina á síðunni. Ákveðið var að hafa innskráningarkerfi, vinakerfi, að hver notandi ætti sinn eigin prófíl og að bjóða uppá þann kost að hver notandi gæti búið til fleiri en eina síðu.
+
+## Framkvæmd:
+
+Við kóðun var stuðst við flest þau verkefni sem hafa verið sett fyrir á árinu. Notast var við innskráningar og gagnagrunn eins og í verkefni 6, villuyfirferð eins og búin var til í verkefni 5, notast var við þá bootstrap þekkingu sem við fengum í verkefni 3 svo var cssið úr verkefni 2 notað.
+Ýmis vandamál komu upp þegar unnið var með gagnagrunni til dæmis komu upp vandamál þegar reynt var að búa til skjal fyrir vináttu í lib möppunni í verkefninu og virtist sem gagnagrunnurinn gæti ekki tengst því skjali, því var ákveðið að láta þau föll sem tengdust friendship gagnagrunninum öll inní users í lib.
+
+Annað sem kom á óvart hversu erfitt var að framkvæma var að láta takkana sem svöruðu hvort notandi samþykkti eða hundsaði vinabeiðni frá öðrum manneskjum á síðunni fá rétta virkni. Þar þurfti að láta takkana tala við framenda javascriptið og þaðan að senda post request með jquery á bakenda javascriptið. Líklegast er þó að þessi vandamál spruttu upp af því að hvorugur meðlimur af Sunnsteinn verkefninu hafði leyst verkefni 4 þar sem kennt var á jquery.
+
+## Niðurstaða:
+
+Lokaútgáfan af verkefninu varð síða þar sem notandi skráir sig inn og getur búið til eins margar síður og gagnagrunnur leyfir. Notandinn getur bætt öðrum notendum sem nota síðuna sem vinir ef þeir samþykja vinabeiðnina. Þá getur notandinn skoðað prófílinn hjá sér og öllum vinum sínum og allar þær síður sem þeir hafa búið til. Á síðunum er hægt að skrifa á vegg. Nýskráning síðan er með validation sem athugar hvort þær upplýsingar sem notandinn setur inn séu nokkuð út í hött. Gagnagrunnarnir tala allir saman og er username í user foreign key í bæði síðum, friendship og wall. Einnig er sitenames í sites foreign key í wall.
+
+Þar sem verkefnið var unnið mikið með css án bootstrap var miklum tíma eytt í að gera síðuna vel skalanlega og voru báðir meðlimir Sunnsteins tiltöllega ánægðir með afrakstur þess.
+
+Allt í allt voru báðir meðlimir mjög ánægðir með samstarf og lokaútkomu verkefnis.
