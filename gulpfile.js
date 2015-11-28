@@ -14,6 +14,7 @@ gulp.task('styles', function() {
     .pipe(sass())
     .pipe(gulp.dest('./public/dist/stylesheets'))
     .pipe(browserSync.stream());
+
 });
 
 
@@ -72,6 +73,13 @@ gulp.task('serve', function() {
     gulp.watch('./public/stylesheets/**/*.scss', ['styles']);
 });
 
+gulp.task('inspect', function () {
+  return gulp.src(['./*.js',
+  './**/*.js', '!lib/pass.js', '!node_modules/**/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish))
+    .pipe(jshint.reporter('fail'));
+});
 
 // set production enviroment, then do default tasks.
 gulp.task('serve-prod', ['setProdEnv','default']);

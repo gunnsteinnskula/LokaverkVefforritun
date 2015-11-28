@@ -27,6 +27,7 @@ router.post('/register', postRegister);
 router.get('/search', getSearch);
 router.post('/search', postSearch);
 router.get('/sida', getExample);
+router.post('/sida', getExample);
 
 
 function getExample(req, res, next){
