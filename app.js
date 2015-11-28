@@ -1,5 +1,7 @@
 'use strict';
 
+// dotenv
+var dotenv = require('dotenv').load();
 var express = require('express');
 // the path module makes working with paths more convenient
 var path = require('path');
