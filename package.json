@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "gulp",
-		"postinstall":"gulp default"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
