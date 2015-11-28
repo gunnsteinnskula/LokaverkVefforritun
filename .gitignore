@@ -53,6 +53,7 @@ node_modules.textClipping
 *.swp
 *.swo
 *~
+.env
 
 *.un~
 public/styleshees/.layout.scss.un~
